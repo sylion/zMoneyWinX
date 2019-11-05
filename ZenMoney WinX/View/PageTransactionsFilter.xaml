@@ -1,0 +1,262 @@
+﻿<Page
+    x:Class="zMoneyWinX.View.PageTransactionsFilter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:zMoneyWinX.View"
+    xmlns:model="using:zMoneyWinX.Model"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/ZenFilter.xaml" />
+                <ResourceDictionary Source="/Themes/ZenPivot.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+            <model:CheckedTextColor x:Key="CheckedTextColor"/>
+            <model:CheckedBackColor x:Key="CheckedBackColor"/>
+            <model:tagImage x:Key="tagImage"/>
+            <model:tagLetter x:Key="tagLetter"/>
+            <model:tagImageVisibility x:Key="tagImageVisibility"/>
+            <model:tagLetterVisibility x:Key="tagLetterVisibility"/>
+            
+            <DataTemplate x:Name="TagItemTemplate" x:DataType="model:Tag">
+                <Grid Height="25" VerticalAlignment="Top" Margin="0,5"
+                            Background="{Binding isChecked, Converter={StaticResource CheckedBackColor}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Width="12" Height="12" TextAlignment="Center" FontSize="10" FontWeight="SemiBold" IsColorFontEnabled="True" Text="{Binding Title, Converter={StaticResource tagLetter}}"
+                               Visibility="{Binding Icon, Converter={StaticResource tagLetterVisibility}}"/>
+
+                    <Rectangle Grid.Column="0" Width="12" Height="12" VerticalAlignment="Center" Visibility="{Binding Icon, Converter={StaticResource tagImageVisibility}}">
+                        <Rectangle.Fill>
+                            <ImageBrush>
+                                <ImageBrush.ImageSource>
+                                    <BitmapImage UriSource="{Binding Icon, Converter={StaticResource tagImage}}" 
+                                                 DecodePixelWidth="15" DecodePixelHeight="15" DecodePixelType="Logical"/>
+                                </ImageBrush.ImageSource>
+                            </ImageBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock Grid.Column="1" Text="{x:Bind Title}" Foreground="{Binding isChecked, Converter={StaticResource CheckedTextColor}}" FontSize="16" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center"/>
+                </Grid>
+            </DataTemplate>
+
+            <DataTemplate x:Name="AccountItemTemplate" x:DataType="model:Account">
+                <Grid Height="25" VerticalAlignment="Top" Margin="0,5"
+                            Background="{Binding isChecked, Converter={StaticResource CheckedBackColor}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Width="12" Height="12" VerticalAlignment="Center">
+                        <Rectangle.Fill>
+                            <ImageBrush>
+                                <ImageBrush.ImageSource>
+                                    <BitmapImage UriSource="{Binding displayAccountIcon}" 
+                                                 DecodePixelWidth="15" DecodePixelHeight="15" DecodePixelType="Logical"/>
+                                </ImageBrush.ImageSource>
+                            </ImageBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock Grid.Column="1" Text="{x:Bind Title}" Foreground="{Binding isChecked, Converter={StaticResource CheckedTextColor}}" FontSize="16" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center"/>
+                </Grid>
+            </DataTemplate>
+            <Style x:Name="ListItemContainerStyle" TargetType="ListViewItem">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="MinHeight" Value="0"/>
+            </Style>
+        </Grid.Resources>
+
+        <CommandBar Grid.Row="0" Name="CmdBar" Background="#FFF04137" Foreground="White">
+            <AppBarButton Name="CmdSave" x:Uid="CmdSave" Click="CmdClick" Icon="Save" FontSize="8" Foreground="White" Tag="Save"/>
+            <AppBarButton Name="CmdCancel" x:Uid="CmdCancel" Click="CmdClick" Icon="Cancel" FontSize="8" Foreground="White" Tag="Cancel"/>
+        </CommandBar>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <Grid Name="Root" Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <model:filterDate x:Key="filterDate"/>
+                    <model:pivotToTransPeriod x:Key="pivotToTransPeriod"/>
+                    <model:PivotidxToBoolean x:Key="PivotidxToBoolean"/>
+                    <model:periodEnabled x:Key="periodEnabled"/>
+                    <model:pivotToTransTypeFilter x:Key="pivotToTransTypeFilter"/>
+                </Grid.Resources>
+
+                <!--Period-->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="#EEEEEEEE" Padding="3">
+                        <TextBlock x:Uid="TransFilterPeriodLbl" FontSize="14" FontWeight="SemiBold"/>
+                    </Grid>
+
+                    <Pivot Grid.Row="1" Height="24" Margin="5,5,5,0" Grid.ColumnSpan="2" 
+                       SelectionChanged="Pivot_SelectionChanged" 
+                       SelectedIndex="{Binding DatePeriod, Converter={StaticResource pivotToTransPeriod}, Mode=TwoWay}">
+                        <PivotItem x:Uid="TransFilterPeriodAll"/>
+                        <PivotItem x:Uid="TransPeriodToday"/>
+                        <PivotItem x:Uid="TransPeriodYesterday"/>
+                        <PivotItem x:Uid="TransPeriodThisWeek"/>
+                        <PivotItem x:Uid="TransPeriodThisMonth"/>
+                        <PivotItem x:Uid="TransPeriodPeriod"/>
+                    </Pivot>
+                    <CalendarDatePicker Grid.Row="2" Grid.Column="0" HeaderTemplate="{x:Null}" Margin="5,0,5,5"
+                                        HorizontalAlignment="Stretch" 
+                                        DateChanged="CalendarDatePickerStart_DateChanged"
+                                        Date="{Binding DateFrom, Converter={StaticResource filterDate}, Mode=TwoWay}"
+                                        IsEnabled="{Binding DatePeriod, Converter={StaticResource periodEnabled}}"/>
+                    <CalendarDatePicker Grid.Row="2" Grid.Column="1" HeaderTemplate="{x:Null}" Margin="5,0,5,5"
+                                        HorizontalAlignment="Stretch" 
+                                        DateChanged="CalendarDatePickerEnd_DateChanged"
+                                        Date="{Binding DateTo, Converter={StaticResource filterDate}, Mode=TwoWay}"
+                                        IsEnabled="{Binding DatePeriod, Converter={StaticResource periodEnabled}}"/>
+                </Grid>
+
+                <!--Trans type-->
+                <Grid Grid.Row="1" Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Background="#EEEEEEEE" Padding="3">
+                        <TextBlock x:Uid="TransFilterTransTypeLbl" FontSize="14" FontWeight="SemiBold"/>
+                    </Grid>
+                    <Pivot Grid.Row="1" Height="24" Margin="5" SelectedIndex="{Binding TransType, Converter={StaticResource pivotToTransTypeFilter}, Mode=TwoWay}">
+                        <PivotItem x:Uid="TransFilterTypeAll"/>
+                        <PivotItem x:Uid="TransFilterOutcome"/>
+                        <PivotItem x:Uid="TransFilterIncome"/>
+                        <PivotItem x:Uid="TransFilterTransfer"/>
+                        <PivotItem x:Uid="TransFilterDebt"/>
+                    </Pivot>
+                </Grid>
+
+                <!--Merchant-->
+                <Grid Grid.Row="2" Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Background="#EEEEEEEE" Padding="3">
+                        <TextBlock x:Uid="TransFilterMerchantLbl" FontSize="14" FontWeight="SemiBold"/>
+                    </Grid>
+                    <AutoSuggestBox Name="FilterMerchant" Grid.Row="1" Margin="5"
+                                    TextChanged="Merchant_TextChanged"
+                                    QueryIcon="Contact"
+                                    DisplayMemberPath="Title" TextMemberPath="Title"/>
+                </Grid>
+
+                <!--Comment-->
+                <Grid Grid.Row="3" Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Background="#EEEEEEEE" Padding="3">
+                        <TextBlock x:Uid="TransFilterCommentLbl" FontSize="14" FontWeight="SemiBold"/>
+                    </Grid>
+                    <AutoSuggestBox Name="FilterComment" Grid.Row="1" Margin="5"
+                                    QueryIcon="Comment" Text="{Binding Comment, Mode=TwoWay}"/>
+                </Grid>
+
+                <!--Accounts-->
+                <Grid Grid.Row="4" Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Background="#EEEEEEEE" Padding="3">
+                        <TextBlock x:Uid="TransFilterAccountLbl" FontSize="14" FontWeight="SemiBold"/>
+                    </Grid>
+                    <ListView Grid.Row="1" Name="FilterAccounts"
+                              SelectionMode="None" Margin="5"
+                              ItemTemplate="{StaticResource AccountItemTemplate}"
+                              ItemContainerStyle="{StaticResource ListItemContainerStyle}"
+                              IsItemClickEnabled="True"
+                              ShowsScrollingPlaceholders="True"
+                              ItemClick="FilterAccounts_ItemClick"/>
+                </Grid>
+
+                <!--Categories-->
+                <Grid Grid.Row="5" Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Background="#EEEEEEEE" Padding="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" x:Uid="TransFilterCategoryLbl" FontSize="14" FontWeight="SemiBold" VerticalAlignment="Bottom" Margin="0,0,20,0"/>
+                        <Pivot Grid.Column="1" Height="24"
+                               SelectedIndex="{Binding Exclude, Converter={StaticResource PivotidxToBoolean}, Mode=TwoWay}">
+                            <PivotItem x:Uid="TransFilterCategoryInclude" Header="Include"/>
+                            <PivotItem x:Uid="TransFilterCategoryExclude" Header="Exclude"/>
+                        </Pivot>
+                    </Grid>
+                    <ListView Grid.Row="1" Name="FilterTags"
+                          SelectionMode="None" Margin="5"
+                          ItemTemplate="{StaticResource TagItemTemplate}"
+                          ItemContainerStyle="{StaticResource ListItemContainerStyle}"
+                          IsItemClickEnabled="True"
+                          ShowsScrollingPlaceholders="True"
+                          ItemClick="FilterTags_ItemClick"/>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ContentStates">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Root.HorizontalAlignment" Value="Center" />
+                        <Setter Target="Root.Width" Value="720" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Root.HorizontalAlignment" Value="Stretch" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>

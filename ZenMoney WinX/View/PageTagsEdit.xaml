@@ -1,0 +1,181 @@
+﻿<Page
+    x:Class="zMoneyWinX.View.PageTagsEdit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:zMoneyWinX.View"
+    xmlns:model="using:zMoneyWinX.Model"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Loaded="Page_Loaded"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/ZenPivot.xaml" />
+                <ResourceDictionary Source="/Themes/ZenTextBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <CommandBar Grid.Row="0" Name="CmdBar" Background="#FFF04137" Foreground="White">
+            <AppBarButton Name="CmdDelete" x:Uid="CmdDelete" Click="CmdClick" Icon="Delete" FontSize="8" Foreground="White" Tag="Delete" Visibility="Collapsed"/>
+            <AppBarButton Name="CmdSave" x:Uid="CmdSave" Click="CmdClick" Icon="Save" FontSize="8" Foreground="White" Tag="Save"/>
+            <AppBarButton Name="CmdCancel" x:Uid="CmdCancel" Click="CmdClick" Icon="Cancel" FontSize="8" Foreground="White" Tag="Cancel"/>
+        </CommandBar>
+        <ProgressBar Grid.Row="0" Name="LoadProgress" Foreground="White" Visibility="Collapsed" IsIndeterminate="True" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+
+        <Grid Grid.Row="1" Name="Root" Padding="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <model:tagImage x:Key="tagImage"/>
+                <model:emptyGUID x:Key="emptyGUID"/>
+                <model:tagHasChild x:Key="tagHasChild"/>
+                <model:tagLetter x:Key="tagLetter"/>
+                <model:tagImageVisibility x:Key="tagImageVisibility"/>
+                <model:tagLetterVisibility x:Key="tagLetterVisibility"/>
+            </Grid.Resources>
+
+            <TextBox Grid.Row="0" x:Uid="TitleText" Text="{Binding editTitle, Mode=TwoWay}"/>
+
+            <ComboBox Grid.Row="1" HorizontalAlignment="Stretch" 
+                      Name="ParentTag"
+                      x:Uid="ParentTagText"
+                      DisplayMemberPath="Title" 
+                      SelectedValuePath="Id" 
+                      SelectedValue="{Binding editParent, Converter={StaticResource emptyGUID}, Mode=TwoWay}"
+                      Visibility="{Binding Converter={StaticResource tagHasChild}}"/>
+
+            <Grid Grid.Row="2" HorizontalAlignment="Stretch" 
+                  BorderBrush="Gray"
+                  BorderThickness="0,0,0,1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" HorizontalAlignment="Center" Tag="Color" Background="Transparent" Click="Button_Click">
+                    <Button.Content>
+                        <Border Width="32" Height="32" VerticalAlignment="Top" BorderThickness="1" BorderBrush="{Binding TagColor}" CornerRadius="100" Background="{Binding TagColor}" Margin="5,5,0,5"/>
+                    </Button.Content>
+                </Button>
+
+                <Button Grid.Column="1" HorizontalAlignment="Center" Tag="Icon" Background="Transparent" Click="Button_Click">
+                    <Button.Content>
+                        <StackPanel>
+                            <Border Width="32" Height="32" VerticalAlignment="Top" BorderThickness="1" BorderBrush="{Binding TagColor}" CornerRadius="100" Background="Transparent" Margin="5,5,0,5"
+                                    Visibility="{Binding editIcon, Converter={StaticResource tagLetterVisibility}}">
+                                <TextBlock Width="20" Height="20" TextAlignment="Center" FontWeight="SemiBold" IsColorFontEnabled="True" Text="{Binding editTitle, Converter={StaticResource tagLetter}}"/>
+                            </Border>
+
+                            <Border Width="50" Height="50" BorderThickness="2" BorderBrush="{Binding TagColor}" CornerRadius="100" Background="Transparent"
+                                    Visibility="{Binding editIcon, Converter={StaticResource tagImageVisibility}}">
+                                <Rectangle Width="20" Height="20">
+                                    <Rectangle.Fill>
+                                        <ImageBrush>
+                                            <ImageBrush.ImageSource>
+                                                <BitmapImage UriSource="{Binding editIcon, Converter={StaticResource tagImage}}" 
+                                                             DecodePixelWidth="20" DecodePixelHeight="20" DecodePixelType="Logical"/>
+                                            </ImageBrush.ImageSource>
+                                        </ImageBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Border>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                    <ToggleSwitch  x:Uid="ShowIncome" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}" IsOn="{Binding editShowIncome, Mode=TwoWay}"/>
+                    <ToggleSwitch  x:Uid="ShowOutcome" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}" IsOn="{Binding editShowOutcome, Mode=TwoWay}"/>
+                </StackPanel>
+            </Grid>
+            <StackPanel Grid.Row="3" HorizontalAlignment="Stretch"
+                        BorderBrush="Gray"
+                        BorderThickness="0,0,0,1">
+                <ToggleSwitch x:Uid="InBudgetIncome" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}"
+                              IsOn="{Binding editBudgetIncome, Mode=TwoWay}" IsEnabled="{Binding editShowIncome}"/>
+                <ToggleSwitch x:Uid="InBudgetOutcome" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}"
+                              IsOn="{Binding editBudgetOutcome, Mode=TwoWay}" IsEnabled="{Binding editShowOutcome}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" HorizontalAlignment="Stretch"
+                        BorderBrush="Gray"
+                        BorderThickness="0,0,0,1">
+                <ToggleSwitch x:Uid="TagRequired" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}" IsOn="{Binding editRequired, Mode=TwoWay}"/>
+                <TextBlock Foreground="Gray" FontSize="10" x:Uid="TagRequiredDesc1" TextWrapping="WrapWholeWords"/>
+                <TextBlock Foreground="Gray" FontSize="10" x:Uid="TagRequiredDesc2" TextWrapping="WrapWholeWords"/>
+                <TextBlock Foreground="Gray" FontSize="10" x:Uid="TagRequiredDesc3" TextWrapping="WrapWholeWords"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Name="ColorPick" Visibility="Collapsed" Margin="0,10,0,0">
+            <GridView Name="ListColor" IsItemClickEnabled="True" ItemClick="ListColor_ItemClick" HorizontalAlignment="Center">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="50" Height="50" BorderThickness="0" CornerRadius="100" Background="{Binding}"/>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </Grid>
+        
+        <Grid Grid.Row="1" Name="IconPick" Visibility="Collapsed" Margin="0,10,0,0">
+            <GridView Name="ListIcon" IsItemClickEnabled="True" ItemClick="ListIcon_ItemClick" HorizontalAlignment="Center">
+                <GridView.Resources>
+                    <model:tagImage x:Key="tagImage"/>
+                </GridView.Resources>
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="50" Height="50" BorderThickness="2" BorderBrush="Gray" CornerRadius="100" Background="Transparent">
+                            <Rectangle Width="20" Height="20">
+                                <Rectangle.Fill>
+                                    <ImageBrush>
+                                        <ImageBrush.ImageSource>
+                                            <BitmapImage UriSource="{Binding Converter={StaticResource tagImage}}" 
+                                                             DecodePixelWidth="20" DecodePixelHeight="20" DecodePixelType="Logical"/>
+                                        </ImageBrush.ImageSource>
+                                    </ImageBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </Border>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </Grid>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ContentStates">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Root.HorizontalAlignment" Value="Center" />
+                        <Setter Target="Root.Width" Value="720" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Root.HorizontalAlignment" Value="Stretch" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>

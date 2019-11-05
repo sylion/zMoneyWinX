@@ -1,0 +1,279 @@
+﻿<Page
+    x:Class="zMoneyWinX.View.PageAccountsEdit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:zMoneyWinX.View"
+    xmlns:model="using:zMoneyWinX.Model"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/ZenPivot.xaml" />
+                <ResourceDictionary Source="/Themes/ZenTextBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <DataTemplate x:Name="AccountComboBoxItemTemplate" x:DataType="model:Account">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Title}"/>
+                </StackPanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <CommandBar Grid.Row="0" Name="CmdBar" Background="#FFF04137" Foreground="White">
+            <AppBarButton Name="CmdDelete" x:Uid="CmdDelete" Click="CmdClick" Icon="Delete" FontSize="8" Foreground="White" Tag="Delete" Visibility="Collapsed"/>
+            <AppBarButton Name="CmdSave" x:Uid="CmdSave" Click="CmdClick" Icon="Save" FontSize="8" Foreground="White" Tag="Save"/>
+            <AppBarButton Name="CmdCancel" x:Uid="CmdCancel" Click="CmdClick" Icon="Cancel" FontSize="8" Foreground="White" Tag="Cancel"/>
+        </CommandBar>
+        <ProgressBar Grid.Row="0" Name="LoadProgress" Foreground="White" Visibility="Collapsed" IsIndeterminate="True" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <Grid Name="Root" Padding="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.Resources>
+                    <model:formulaToResult x:Key="formulaToResult"/>
+                    <model:formulaToResultInteger x:Key="formulaToResultInteger"/>                    
+                </Grid.Resources>
+
+                <TextBox Grid.Row="0" x:Uid="TitleText" Text="{Binding editTitle, Mode=TwoWay}"
+                         IsEnabled="{Binding CanEditName}"/>
+
+                <ComboBox x:Uid="AccountEditType" Margin="0,4,0,0"
+                          Grid.Row="1" HorizontalAlignment="Stretch"
+                          Name="AccType"
+                          DisplayMemberPath="Title"
+                          SelectedValuePath="Type"
+                          SelectedValue="{Binding editType, Mode=TwoWay}"
+                          IsEnabled="{Binding CanEditType}"/>
+
+                <ComboBox x:Uid="AccountEditInstrument" Margin="0,4,0,0"
+                          Grid.Row="2" HorizontalAlignment="Stretch"
+                          Name="AccInstrument"
+                          SelectedValuePath="Id"
+                          SelectedValue="{Binding editInstrument, Mode=TwoWay}"
+                          IsEnabled="{Binding CanEditCurrency}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Title}"/>
+                                <TextBlock Text=" ("/>
+                                <TextBlock Text="{Binding ShortTitle}"/>
+                                <TextBlock Text=")"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <!--Loan and deposit-->
+                <CalendarDatePicker Grid.Row="3" x:Uid="AccountEditOpenDate" Margin="0,5,0,0"
+                                    HorizontalAlignment="Stretch" 
+                                    FirstDayOfWeek="Monday"
+                                    DateChanged="CalendarDatePicker_DateChanged"
+                                    Visibility="{Binding isStartDateVisible}"
+                                    Date="{Binding editStartDate, Mode=TwoWay}"/>
+                <TextBox Grid.Row="4" x:Uid="AccountEditAmount" TextAlignment="Right" InputScope="Digits" Margin="0,4,0,0"
+                         Text="{Binding editStartBalance, Converter={StaticResource formulaToResult}, Mode=TwoWay}"
+                         Visibility="{Binding isAmountVisible}" IsEnabled="{Binding CanEditAmount}"
+                         GotFocus="TextBox_GotFocus" TextChanging="TextBox_TextChanging"/>
+
+                <Grid Grid.Row="5" Visibility="{Binding isPeriodVisible}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" Header="{Binding TermHeader}" TextAlignment="Right" InputScope="Digits" Margin="0,4,0,0"
+                         Text="{Binding editPeriod, Converter={StaticResource formulaToResultInteger}, Mode=TwoWay}"
+                         GotFocus="TextBox_GotFocus" TextChanging="TextBox_TextChanging"/>
+
+                    <ComboBox Grid.Column="1" Header="  " 
+                          ItemsSource="{Binding PeriodMode}"
+                          HorizontalAlignment="Stretch"
+                          DisplayMemberPath="Title"
+                          SelectedValuePath="Id"
+                          SelectedValue="{Binding editPeriodMode, Mode=TwoWay}"/>
+                </Grid>
+
+                <TextBox Grid.Row="6" x:Uid="AccountEditPercentage" TextAlignment="Right" InputScope="Digits" Margin="0,4,0,0"
+                         Text="{Binding editPercent, Converter={StaticResource formulaToResult}, Mode=TwoWay}"
+                         Visibility="{Binding isPercentVisible}"
+                         GotFocus="TextBox_GotFocus" TextChanging="TextBox_TextChanging"/>
+
+                <ComboBox Grid.Row="7" x:Uid="AccountEditPecentMode" 
+                          ItemsSource="{Binding PercentMode}"
+                          HorizontalAlignment="Stretch"
+                          DisplayMemberPath="Title"
+                          SelectedValuePath="Id"
+                          SelectedValue="{Binding editPercentMode, Mode=TwoWay}" 
+                          Visibility="{Binding isPercentModeVisible}"/>
+                <ComboBox Grid.Row="7" x:Uid="AccountEditPecentMode" 
+                          ItemsSource="{Binding PaymentMode}"
+                          HorizontalAlignment="Stretch"
+                          DisplayMemberPath="Title"
+                          SelectedValuePath="Id"
+                          SelectedValue="{Binding editPaymentMode, Mode=TwoWay}" 
+                          Visibility="{Binding isPaymentModeVisible}"/>
+                
+
+                <ToggleSwitch Grid.Row="8" x:Uid="AccountEditCapitalization" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}" IsOn="{Binding editCapitalization, Mode=TwoWay}" 
+                              HorizontalAlignment="Stretch" Visibility="{Binding isCapitalizationVisible}"/>
+
+                <ComboBox Grid.Row="9" Header="{Binding InOutAccount}"
+                          HorizontalAlignment="Stretch"
+                          ItemTemplate="{StaticResource AccountComboBoxItemTemplate}"
+                          ItemsSource="{Binding AccountList}"
+                          SelectedValuePath="Id" 
+                          SelectedValue="{Binding editAccount, Mode=TwoWay}"
+                          Visibility="{Binding isAccountListVisible}"/>
+                <!--Loan and deposit-->
+
+                <TextBox Grid.Row="10" x:Uid="AccountEditCreditLimit" TextAlignment="Right" InputScope="Digits" Margin="0,4,0,0"
+                         Text="{Binding editCreditLimit, Converter={StaticResource formulaToResult}, Mode=TwoWay}"
+                         Visibility="{Binding isCreditLimitVisible}"
+                         GotFocus="TextBox_GotFocus" TextChanging="TextBox_TextChanging"/>
+
+                <TextBox Grid.Row="11" x:Uid="AccountEditStartBalance" TextAlignment="Right" InputScope="Digits" Margin="0,4,0,0"
+                         Text="{Binding editStartBalance, Converter={StaticResource formulaToResult}, Mode=TwoWay}"
+                         Visibility="{Binding isStartBalanceVisible}"
+                         GotFocus="TextBox_GotFocus" TextChanging="TextBox_TextChanging"/>
+
+                <StackPanel Grid.Row="12" Orientation="Vertical">
+                    <AutoSuggestBox x:Uid="AccountEditCompany" Margin="0,4,0,0"
+                            Name="Companies"
+                            HorizontalAlignment="Stretch"
+                            TextChanged="Companies_TextChanged"
+                            QueryIcon="Filter"
+                            DisplayMemberPath="Title" TextMemberPath="Title"
+                            Text="{Binding editCompany, Mode=TwoWay}"
+                            Visibility="{Binding isCompanyVisible}"/>
+                    <Grid BorderBrush="Gray" BorderThickness="0,0,0,1" Margin="0,4,0,0"
+                      Visibility="{Binding isAliasVisible}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" x:Uid="LblCardAlias" FontSize="10" Foreground="Gray"/>
+
+                        <Grid Grid.Row="1" Margin="0,0,0,5" Padding="2,0,2,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Click="AddAlias_Click"
+                                Foreground="Red" Background="Transparent" 
+                                VerticalAlignment="Center" Margin="0,0,5,0" HorizontalAlignment="Center">
+                                <Button.Content>
+                                    <FontIcon Glyph="&#xE109;" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Segoe MDL2 Assets" Foreground="Red" FontSize="14"/>
+                                </Button.Content>
+                            </Button>
+                            <GridView Grid.Column="1" Height="50" Name="AccNumbers"
+                                  ItemClick="EditAlias_Click" IsItemClickEnabled="True" IsSwipeEnabled="True"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  ScrollViewer.HorizontalScrollMode="Enabled"
+                                  ScrollViewer.VerticalScrollMode="Disabled"
+                                  SelectionMode="None">
+                                <GridView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <ItemsWrapGrid Orientation="Vertical" />
+                                    </ItemsPanelTemplate>
+                                </GridView.ItemsPanel>
+                                <GridView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Vertical">
+                                            <Border Margin="1" Padding="1" BorderThickness="1" BorderBrush="Red" Background="Transparent">
+                                                <TextBlock VerticalAlignment="Center" TextWrapping="NoWrap" FontSize="14" Text="{Binding}" Foreground="Red"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridView.ItemTemplate>
+                            </GridView>
+                        </Grid>
+                        <TextBlock Grid.Row="2" x:Uid="LblCardAliasDescription" FontSize="8" Foreground="Gray"/>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="13" Orientation="Vertical">
+                    <ToggleSwitch x:Uid="AccountEditIsDebt" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}"
+                              IsOn="{Binding editSavings, Mode=TwoWay}"
+                              HorizontalAlignment="Stretch" Visibility="{Binding isSavingsVisible}"/>
+                    <TextBlock x:Uid="AccountEditIsDebtDesc" FontSize="10" TextWrapping="WrapWholeWords" Foreground="Gray" Visibility="{Binding isSavingsVisible}"/>
+                </StackPanel>
+
+                <ToggleSwitch Grid.Row="14" x:Uid="AccountEditInBalance" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}" IsOn="{Binding editInBalance, Mode=TwoWay}" 
+                              HorizontalAlignment="Stretch"/>
+
+                <ToggleSwitch Grid.Row="15" x:Uid="AccountEditEnableSMS" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}" IsOn="{Binding editEnableSms, Mode=TwoWay}"
+                              HorizontalAlignment="Stretch" Visibility="{Binding isSMSVisible}"/>
+
+                <ToggleSwitch Grid.Row="16" x:Uid="AccountEditEnableCorrection" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}" IsOn="{Binding editEnableCorrection, Mode=TwoWay}" 
+                              HorizontalAlignment="Stretch" Visibility="{Binding isCorrectionVisible}"/>
+
+                <ToggleSwitch Grid.Row="17" x:Uid="AccountEditArchive" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}" IsOn="{Binding editArchive, Mode=TwoWay}"
+                              HorizontalAlignment="Stretch" Visibility="{Binding isArchiveVisible}"/>
+
+                <StackPanel Grid.Row="18" Orientation="Vertical">
+                    <ToggleSwitch x:Uid="AccountEditPrivate" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}"
+                              IsOn="{Binding editRole, Mode=TwoWay}"
+                              HorizontalAlignment="Stretch" Visibility="{Binding isPrivateVisible}"/>
+                    <TextBlock x:Uid="AccountEditPrivateDescr" FontSize="10" TextWrapping="WrapWholeWords" Foreground="Gray" Visibility="{Binding isPrivateVisible}"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ContentStates">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Root.HorizontalAlignment" Value="Center" />
+                        <Setter Target="Root.Width" Value="720" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Root.HorizontalAlignment" Value="Stretch" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>

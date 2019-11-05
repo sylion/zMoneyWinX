@@ -1,0 +1,1248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountsActive" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="AccountsArchive" xml:space="preserve">
+    <value>Archived accounts</value>
+  </data>
+  <data name="AccountsIOwe" xml:space="preserve">
+    <value>I owe</value>
+  </data>
+  <data name="AccountsOweme" xml:space="preserve">
+    <value>Owe me</value>
+  </data>
+  <data name="Balance.Text" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="btnLogin.Content" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="SettingsBtnLogout.Content" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="SettingsBtnLogoutInfo.Text" xml:space="preserve">
+    <value>*All local data will be deleted!!!</value>
+  </data>
+  <data name="CmdAdd.Label" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="CmdCancel.Label" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CmdDelete.Label" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="CmdFilter.Label" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="CmdSave.Label" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CmdUpdate.Label" xml:space="preserve">
+    <value>Sync</value>
+  </data>
+  <data name="ConnectionError.Text" xml:space="preserve">
+    <value>Connection error!!!</value>
+  </data>
+  <data name="ConnErr.Text" xml:space="preserve">
+    <value>Connection error! Check your internet connection...</value>
+  </data>
+  <data name="DateToday" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="DateTomorrow" xml:space="preserve">
+    <value>Tomorrow</value>
+  </data>
+  <data name="DateYesterday" xml:space="preserve">
+    <value>Yesterday</value>
+  </data>
+  <data name="linkRegister.Content" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="LogErr.Text" xml:space="preserve">
+    <value>Wrong Username and/or Password</value>
+  </data>
+  <data name="MerchantPayFrom.Header" xml:space="preserve">
+    <value>Payee</value>
+  </data>
+  <data name="MerchantPayTo.Header" xml:space="preserve">
+    <value>Payee</value>
+  </data>
+  <data name="NeedClose.Text" xml:space="preserve">
+    <value>For exit, press back button again</value>
+  </data>
+  <data name="PageAbout" xml:space="preserve">
+    <value>About...</value>
+  </data>
+  <data name="PageAccounts" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="PageBudget" xml:space="preserve">
+    <value>Budget</value>
+  </data>
+  <data name="PageMerchants" xml:space="preserve">
+    <value>Merchants</value>
+  </data>
+  <data name="PageReports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="PageSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="PageTags" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="PageTransactions" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="PINEnter" xml:space="preserve">
+    <value>Enter PIN-code</value>
+  </data>
+  <data name="PINRepeat" xml:space="preserve">
+    <value>Repeat PIN-code</value>
+  </data>
+  <data name="PINSetup" xml:space="preserve">
+    <value>Set PIN-code</value>
+  </data>
+  <data name="PivotGiveDebt.Header" xml:space="preserve">
+    <value>Give in debt</value>
+  </data>
+  <data name="PivotIncome.Header" xml:space="preserve">
+    <value>Income</value>
+  </data>
+  <data name="PivotOutcome.Header" xml:space="preserve">
+    <value>Outcome</value>
+  </data>
+  <data name="PivotTakeDebt.Header" xml:space="preserve">
+    <value>Take in debt</value>
+  </data>
+  <data name="PivotTransfer.Header" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="Sync.Text" xml:space="preserve">
+    <value>Synchronization...</value>
+  </data>
+  <data name="SyncTime" xml:space="preserve">
+    <value>Last sync time:</value>
+  </data>
+  <data name="SyncTimeNever" xml:space="preserve">
+    <value>Last sync time: never</value>
+  </data>
+  <data name="togPIN.Header" xml:space="preserve">
+    <value>Use PIN-code</value>
+  </data>
+  <data name="TransComment.Header" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="txtAuth.Text" xml:space="preserve">
+    <value>Authorization</value>
+  </data>
+  <data name="txtLogin.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="txtPassword.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="accDebt" xml:space="preserve">
+    <value>Debts</value>
+  </data>
+  <data name="MerchantSearchDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="MerchantSearchDialog.SecondaryButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="MerchantSearchDialog.Title" xml:space="preserve">
+    <value>Merchant search</value>
+  </data>
+  <data name="TransTagEmpty" xml:space="preserve">
+    <value>No category</value>
+  </data>
+  <data name="TransTagGive" xml:space="preserve">
+    <value>Give in debt</value>
+  </data>
+  <data name="TransTagTake" xml:space="preserve">
+    <value>Take in debt</value>
+  </data>
+  <data name="TransTagTransfer" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="ErrorMerchantEmptyName" xml:space="preserve">
+    <value>Enter the merchant name</value>
+  </data>
+  <data name="ErrorMerchantExists" xml:space="preserve">
+    <value>Merchant with same name allready exists</value>
+  </data>
+  <data name="ParentTagText.Header" xml:space="preserve">
+    <value>Parent category</value>
+  </data>
+  <data name="ShowIncome.OnContent" xml:space="preserve">
+    <value>Show income</value>
+  </data>
+  <data name="ShowOutcome.OnContent" xml:space="preserve">
+    <value>Show outcome</value>
+  </data>
+  <data name="TitleText.Header" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="InBudgetIncome.OnContent" xml:space="preserve">
+    <value>Show in income budget</value>
+  </data>
+  <data name="InBudgetOutcome.OnContent" xml:space="preserve">
+    <value>Show in outcome budget</value>
+  </data>
+  <data name="AccountFrom.Header" xml:space="preserve">
+    <value>Outcome account</value>
+  </data>
+  <data name="AccountTo.Header" xml:space="preserve">
+    <value>Income account</value>
+  </data>
+  <data name="TransactionIncomeAmount.Header" xml:space="preserve">
+    <value>Income amount</value>
+  </data>
+  <data name="TransactionOutcomeAmount.Header" xml:space="preserve">
+    <value>Outcome amount</value>
+  </data>
+  <data name="TransDate.Header" xml:space="preserve">
+    <value>Transaction date</value>
+  </data>
+  <data name="AccountEditArchive.OnContent" xml:space="preserve">
+    <value>Archived account</value>
+  </data>
+  <data name="AccountEditCompany.Header" xml:space="preserve">
+    <value>Bank name</value>
+  </data>
+  <data name="AccountEditCreditLimit.Header" xml:space="preserve">
+    <value>Credit limit</value>
+  </data>
+  <data name="AccountEditEnableCorrection.OnContent" xml:space="preserve">
+    <value>Balance autocorrection</value>
+  </data>
+  <data name="AccountEditEnableSMS.OnContent" xml:space="preserve">
+    <value>Enable SMS recognition</value>
+  </data>
+  <data name="AccountEditInBalance.OnContent" xml:space="preserve">
+    <value>Include to total balance</value>
+  </data>
+  <data name="AccountEditInstrument.Header" xml:space="preserve">
+    <value>Account currency</value>
+  </data>
+  <data name="AccountEditType.Header" xml:space="preserve">
+    <value>Account type</value>
+  </data>
+  <data name="AccountTypeCash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="AccountTypeCcard" xml:space="preserve">
+    <value>Credit card</value>
+  </data>
+  <data name="AccountTypeChecking" xml:space="preserve">
+    <value>Bank account</value>
+  </data>
+  <data name="AccountTypeDebt" xml:space="preserve">
+    <value>Debt</value>
+  </data>
+  <data name="DialogNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="DialogYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="DialogSetupPin" xml:space="preserve">
+    <value>Do you want to setup PIN-code? You can do this later in app settings...</value>
+  </data>
+  <data name="ContentDialogAccountAlias.PrimaryButtonText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ContentDialogAccountAlias.SecondaryButtonText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ContentDialogAccountAliasHeader.Header" xml:space="preserve">
+    <value>Card number</value>
+  </data>
+  <data name="ErrorAccountsEquals" xml:space="preserve">
+    <value>- Income account cannot be equal to Outcome account</value>
+  </data>
+  <data name="ErrorEmptyTitle" xml:space="preserve">
+    <value>- Title cannot be empty</value>
+  </data>
+  <data name="ErrorFirstSync" xml:space="preserve">
+    <value>Sync error. App will close now. Please try again later...</value>
+  </data>
+  <data name="ErrorIncomeAccountNull" xml:space="preserve">
+    <value>- Income account not set</value>
+  </data>
+  <data name="ErrorIncomeAccountTotal" xml:space="preserve">
+    <value>- Income total must be bigger than 0</value>
+  </data>
+  <data name="ErrorOutcomeAccountNull" xml:space="preserve">
+    <value>- Outcome account not set</value>
+  </data>
+  <data name="ErrorOutcomeAccountTotal" xml:space="preserve">
+    <value>- Outcome total must be bigger than 0</value>
+  </data>
+  <data name="ErrorPayeeNull" xml:space="preserve">
+    <value>- Payee not set</value>
+  </data>
+  <data name="ErrorTransferTotals" xml:space="preserve">
+    <value>- Income and Outcome totals must be bigger than 0</value>
+  </data>
+  <data name="TransFilterDebt.Header" xml:space="preserve">
+    <value>Debt</value>
+  </data>
+  <data name="TransFilterIncome.Header" xml:space="preserve">
+    <value>Income</value>
+  </data>
+  <data name="TransFilterOutcome.Header" xml:space="preserve">
+    <value>Outcome</value>
+  </data>
+  <data name="TransFilterPeriodAll.Header" xml:space="preserve">
+    <value>All time</value>
+  </data>
+  <data name="TransFilterTransfer.Header" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="TransFilterTypeAll.Header" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="TransPeriodPeriod.Header" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="TransPeriodThisMonth.Header" xml:space="preserve">
+    <value>This month</value>
+  </data>
+  <data name="TransPeriodThisWeek.Header" xml:space="preserve">
+    <value>This week</value>
+  </data>
+  <data name="TransPeriodToday.Header" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="TransPeriodYesterday.Header" xml:space="preserve">
+    <value>Yesterday</value>
+  </data>
+  <data name="ErrorValidation" xml:space="preserve">
+    <value>Validation error:</value>
+  </data>
+  <data name="ButtonReset.Content" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="SettingsHModeAll.Content" xml:space="preserve">
+    <value>All time</value>
+  </data>
+  <data name="SettingsHModeHalfYear.Content" xml:space="preserve">
+    <value>Half year</value>
+  </data>
+  <data name="SettingsHModeMonth.Content" xml:space="preserve">
+    <value>One month</value>
+  </data>
+  <data name="SettingsHModeWeek.Content" xml:space="preserve">
+    <value>One week</value>
+  </data>
+  <data name="SettingsHModeYear.Content" xml:space="preserve">
+    <value>One year</value>
+  </data>
+  <data name="LabelIncome.Text" xml:space="preserve">
+    <value>Income</value>
+  </data>
+  <data name="LabelOutcome.Text" xml:space="preserve">
+    <value>Outcome</value>
+  </data>
+  <data name="SettingsHModeLabel.Text" xml:space="preserve">
+    <value>History range mode</value>
+  </data>
+  <data name="SettingsHModeWarning.Text" xml:space="preserve">
+    <value>*It is not recommended to change this setting, this can significantly slow down the application</value>
+  </data>
+  <data name="FilterResultLbl.Text" xml:space="preserve">
+    <value>Filter results</value>
+  </data>
+  <data name="LblCardAlias.Text" xml:space="preserve">
+    <value>Card number</value>
+  </data>
+  <data name="LblCardAliasDescription.Text" xml:space="preserve">
+    <value>Last four digits of a card number or alias for SMS recognizing</value>
+  </data>
+  <data name="LblTransTags.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="WrongPin.Text" xml:space="preserve">
+    <value>PIN-code incorrect</value>
+  </data>
+  <data name="TransFilterAccountLbl.Text" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="TransFilterCategoryExclude.Header" xml:space="preserve">
+    <value>Exclude</value>
+  </data>
+  <data name="TransFilterCategoryInclude.Header" xml:space="preserve">
+    <value>Include</value>
+  </data>
+  <data name="TransFilterCategoryLbl.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="TransFilterMerchantLbl.Text" xml:space="preserve">
+    <value>Merchant</value>
+  </data>
+  <data name="TransFilterPeriodLbl.Text" xml:space="preserve">
+    <value>Time period</value>
+  </data>
+  <data name="TransFilterTransTypeLbl.Text" xml:space="preserve">
+    <value>Operation type</value>
+  </data>
+  <data name="AcountsShowAll.Header" xml:space="preserve">
+    <value>All accounts</value>
+  </data>
+  <data name="AcountsShowSelected.Header" xml:space="preserve">
+    <value>Selected accounts</value>
+  </data>
+  <data name="QuickAddLbl.Text" xml:space="preserve">
+    <value>Use second tile for QuickAdd action</value>
+  </data>
+  <data name="QuickAddNeedPin.OnContent" xml:space="preserve">
+    <value>Use PIN code for QuickAdd action</value>
+  </data>
+  <data name="QuickAddPin" xml:space="preserve">
+    <value>Pin QuickAdd tile to start</value>
+  </data>
+  <data name="QuickAddUnPin" xml:space="preserve">
+    <value>UnPin QuickAdd tile from start</value>
+  </data>
+  <data name="TransFilterCommentLbl.Text" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="AccountSummaryAllAccLbl.Text" xml:space="preserve">
+    <value>In all accounts</value>
+  </data>
+  <data name="AccountSummaryAvailableLbl.Text" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="AccountSummaryBalanceLbl.Text" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="AccountSummaryNegativeLbl.Text" xml:space="preserve">
+    <value>Negative</value>
+  </data>
+  <data name="AccountSummarySelectedAccDescLbl.Text" xml:space="preserve">
+    <value>*Inbalance accounts</value>
+  </data>
+  <data name="AccountSummarySelectedAccLbl.Text" xml:space="preserve">
+    <value>In selected accounts</value>
+  </data>
+  <data name="AppLngDescriptionLbl.Text" xml:space="preserve">
+    <value>**You must rename categories and accounts by yourself</value>
+  </data>
+  <data name="AppLngLbl.Text" xml:space="preserve">
+    <value>Application language</value>
+  </data>
+  <data name="AppLngRestartLbl.Text" xml:space="preserve">
+    <value>*Required restart</value>
+  </data>
+  <data name="DlgMsgDeleteAccount" xml:space="preserve">
+    <value>Do you realy want to delete this account? All transactions which connected with this account will be deleted too!</value>
+  </data>
+  <data name="DlgMsgDeleteMerchant" xml:space="preserve">
+    <value>Do you realy want to delete this merchant?</value>
+  </data>
+  <data name="DlgMsgDeleteTag" xml:space="preserve">
+    <value>Do you realy want to delete this category?</value>
+  </data>
+  <data name="DlgMsgDeleteTransaction" xml:space="preserve">
+    <value>Do you realy want to delete this transaction?</value>
+  </data>
+  <data name="SettingsUserCurrencyLbl.Text" xml:space="preserve">
+    <value>User currency</value>
+  </data>
+  <data name="SettingsFamilyAccessDescrLbl.Text" xml:space="preserve">
+    <value>*You must use zenmoney.ru websute or official apps for Android\iOS If you want add or remove users</value>
+  </data>
+  <data name="SettingsFamilyAccessUsers.Text" xml:space="preserve">
+    <value>Family access users</value>
+  </data>
+  <data name="AccountsAlien" xml:space="preserve">
+    <value>Not mine accounts</value>
+  </data>
+  <data name="AccountTypeDeposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="AccountTypeLoan" xml:space="preserve">
+    <value>Loan</value>
+  </data>
+  <data name="AccountEditPrivate.OnContent" xml:space="preserve">
+    <value>Private account</value>
+  </data>
+  <data name="AccountEditPrivateDescr.Text" xml:space="preserve">
+    <value>*Transactions on personal accounts are visible only to their owners</value>
+  </data>
+  <data name="AccountSummaryDeptIOweLbl.Text" xml:space="preserve">
+    <value>I owe</value>
+  </data>
+  <data name="AccountSummaryDeptLbl.Text" xml:space="preserve">
+    <value>Debts</value>
+  </data>
+  <data name="AccountSummaryDeptOwemeLbl.Text" xml:space="preserve">
+    <value>Owe me</value>
+  </data>
+  <data name="AccountReport.Text" xml:space="preserve">
+    <value>Distribution by currency</value>
+  </data>
+  <data name="PageCurrencies" xml:space="preserve">
+    <value>Currencies</value>
+  </data>
+  <data name="CurrenciesAmount.Header" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="CurrenciesConverterHeader.Header" xml:space="preserve">
+    <value>Converter</value>
+  </data>
+  <data name="CurrenciesCurrHeader.Header" xml:space="preserve">
+    <value>Currencies</value>
+  </data>
+  <data name="CurrenciesFromCurrency.Header" xml:space="preserve">
+    <value>From currency</value>
+  </data>
+  <data name="CurrenciesResult.Header" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="CurrenciesToCurrency.Header" xml:space="preserve">
+    <value>To currency</value>
+  </data>
+  <data name="CategoryReportCollapsed.Text" xml:space="preserve">
+    <value>Collapsed</value>
+  </data>
+  <data name="CategoryReportExpanded.Text" xml:space="preserve">
+    <value>Expanded</value>
+  </data>
+  <data name="CategoryReportName.Header" xml:space="preserve">
+    <value>Report by tag</value>
+  </data>
+  <data name="CategoryReportIncome.Text" xml:space="preserve">
+    <value>Income</value>
+  </data>
+  <data name="CategoryReportOpType.Text" xml:space="preserve">
+    <value>Operation type</value>
+  </data>
+  <data name="CategoryReportOutcome.Text" xml:space="preserve">
+    <value>Outcome</value>
+  </data>
+  <data name="CategoryReportType.Text" xml:space="preserve">
+    <value>Report type</value>
+  </data>
+  <data name="TagRequired.OnContent" xml:space="preserve">
+    <value>Mandatory expense</value>
+  </data>
+  <data name="TagRequiredDesc1.Text" xml:space="preserve">
+    <value>*The parameter used for the distribution of income</value>
+  </data>
+  <data name="TagRequiredDesc2.Text" xml:space="preserve">
+    <value>Mandatory expenses: food, utilities, transportation ...</value>
+  </data>
+  <data name="TagRequiredDesc3.Text" xml:space="preserve">
+    <value>Optional costs (from which you can opt out), restaurants, taxis, cinema ...</value>
+  </data>
+  <data name="AccountEditIsDebt.OnContent" xml:space="preserve">
+    <value>Savings account</value>
+  </data>
+  <data name="AccountEditIsDebtDesc.Text" xml:space="preserve">
+    <value>*This parameter is used for the distribution of income (not synchronized with the server)</value>
+  </data>
+  <data name="CategoryReportAbove" xml:space="preserve">
+    <value>%1 (%2%) above typical</value>
+  </data>
+  <data name="CategoryReportBelow" xml:space="preserve">
+    <value>%1 below typical</value>
+  </data>
+  <data name="TransTypeIncome" xml:space="preserve">
+    <value>Income</value>
+  </data>
+  <data name="TransTypeOutcome" xml:space="preserve">
+    <value>Outcome</value>
+  </data>
+  <data name="CategoryReportAboveBudget" xml:space="preserve">
+    <value>%1 (%2%) above budget</value>
+  </data>
+  <data name="CategoryReportBelowBudget" xml:space="preserve">
+    <value>%1 below budget</value>
+  </data>
+  <data name="IncomeDistributionBalance.Text" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="IncomeDistributionDebets.Text" xml:space="preserve">
+    <value>Savings</value>
+  </data>
+  <data name="IncomeDistributionInfo" xml:space="preserve">
+    <value>*The distribution is calculated according to the formula</value>
+  </data>
+  <data name="IncomeDistributionInfo1" xml:space="preserve">
+    <value>- mandatory spending</value>
+  </data>
+  <data name="IncomeDistributionInfo2" xml:space="preserve">
+    <value>- savings</value>
+  </data>
+  <data name="IncomeDistributionInfo3" xml:space="preserve">
+    <value>- optional costs</value>
+  </data>
+  <data name="IncomeDistributionMandatory.Text" xml:space="preserve">
+    <value>Mandatory spending</value>
+  </data>
+  <data name="IncomeDistributionNonMandatory.Text" xml:space="preserve">
+    <value>Optional costs</value>
+  </data>
+  <data name="IncomeDistributionReportFromBudget" xml:space="preserve">
+    <value>(budget)</value>
+  </data>
+  <data name="IncomeDistributionReportMsgOops" xml:space="preserve">
+    <value>Oops, bad things with yours budget. In the current month of income are not planned.</value>
+  </data>
+  <data name="IncomeDistributionReportName.Header" xml:space="preserve">
+    <value>Income distribution</value>
+  </data>
+  <data name="IncomeDistributionReportStr" xml:space="preserve">
+    <value>Income distribution: </value>
+  </data>
+  <data name="IncomeDistributionReportMsgBad" xml:space="preserve">
+    <value>This month you are unable to share the costs properly.</value>
+  </data>
+  <data name="IncomeDistributionReportMsgBadBalance" xml:space="preserve">
+    <value>This month you have spent more than earned.</value>
+  </data>
+  <data name="IncomeDistributionReportMsgDepositLess" xml:space="preserve">
+    <value>This month, it is necessary to invest another </value>
+  </data>
+  <data name="IncomeDistributionReportMsgDepositMore" xml:space="preserve">
+    <value>This month you will have invested more than </value>
+  </data>
+  <data name="IncomeDistributionReportMsgMandatoryLess" xml:space="preserve">
+    <value>On mandatory spending, you can spend another </value>
+  </data>
+  <data name="IncomeDistributionReportMsgMandatoryMore" xml:space="preserve">
+    <value>This month, at the mandatory spending, spent more than </value>
+  </data>
+  <data name="IncomeDistributionReportMsgNonMandatoryLess" xml:space="preserve">
+    <value>On the optional expenses you can spend another </value>
+  </data>
+  <data name="IncomeDistributionReportMsgNonMandatoryMore" xml:space="preserve">
+    <value>This month, on optional spending, spent more than </value>
+  </data>
+  <data name="IncomeDistributionReportMsgNoAccDebets" xml:space="preserve">
+    <value>You do not have savings accounts. Create an account with the type of "Deposit" or select one of your accounts as "savings".</value>
+  </data>
+  <data name="IncomeDistributionReportMsgNoTagsMandatory" xml:space="preserve">
+    <value>You do not have the categories of mandatory spending. You can configure them in the "Categories".</value>
+  </data>
+  <data name="curAED" xml:space="preserve">
+    <value>UAE Dirham</value>
+  </data>
+  <data name="curAMD" xml:space="preserve">
+    <value>Armenian dram</value>
+  </data>
+  <data name="curARS" xml:space="preserve">
+    <value>Argentine Peso</value>
+  </data>
+  <data name="curAUD" xml:space="preserve">
+    <value>Australian dollar</value>
+  </data>
+  <data name="curAZN" xml:space="preserve">
+    <value>Azerbaijani manat</value>
+  </data>
+  <data name="curBAM" xml:space="preserve">
+    <value>Convertible mark</value>
+  </data>
+  <data name="curBGN" xml:space="preserve">
+    <value>Bulgarian lev</value>
+  </data>
+  <data name="curBRL" xml:space="preserve">
+    <value>Brazilian real</value>
+  </data>
+  <data name="curBTC" xml:space="preserve">
+    <value>Bitcoin</value>
+  </data>
+  <data name="curBYN" xml:space="preserve">
+    <value>Belarusian ruble (after 2016)</value>
+  </data>
+  <data name="curBYR" xml:space="preserve">
+    <value>Belarusian ruble (before 2016)</value>
+  </data>
+  <data name="curCAD" xml:space="preserve">
+    <value>Canadian dollar</value>
+  </data>
+  <data name="curCHF" xml:space="preserve">
+    <value>Swiss frank</value>
+  </data>
+  <data name="curCLP" xml:space="preserve">
+    <value>Chilean Peso</value>
+  </data>
+  <data name="curCNY" xml:space="preserve">
+    <value>Chinese yuan</value>
+  </data>
+  <data name="curCOP" xml:space="preserve">
+    <value>Colombian Peso</value>
+  </data>
+  <data name="curCZK" xml:space="preserve">
+    <value>Czech Koruna</value>
+  </data>
+  <data name="curDKK" xml:space="preserve">
+    <value>Danish Krone</value>
+  </data>
+  <data name="curDOP" xml:space="preserve">
+    <value>Dominican Peso</value>
+  </data>
+  <data name="curEGP" xml:space="preserve">
+    <value>Egyptian pound</value>
+  </data>
+  <data name="curEUR" xml:space="preserve">
+    <value>Euro</value>
+  </data>
+  <data name="curGBP" xml:space="preserve">
+    <value>English pounds</value>
+  </data>
+  <data name="curGEL" xml:space="preserve">
+    <value>Georgian lari</value>
+  </data>
+  <data name="curGTQ" xml:space="preserve">
+    <value>Guatemalan quetzal</value>
+  </data>
+  <data name="curHKD" xml:space="preserve">
+    <value>Hong Kong dollar</value>
+  </data>
+  <data name="curHRK" xml:space="preserve">
+    <value>Croatian Kuna</value>
+  </data>
+  <data name="curHUF" xml:space="preserve">
+    <value>Hungarian Forint</value>
+  </data>
+  <data name="curIDR" xml:space="preserve">
+    <value>Indonesian Rupiah</value>
+  </data>
+  <data name="curILS" xml:space="preserve">
+    <value>New Israeli Shekel</value>
+  </data>
+  <data name="curINR" xml:space="preserve">
+    <value>Indian Rupee</value>
+  </data>
+  <data name="curIRR" xml:space="preserve">
+    <value>Iranian Rial</value>
+  </data>
+  <data name="curISK" xml:space="preserve">
+    <value>Iceland Krona</value>
+  </data>
+  <data name="curJOD" xml:space="preserve">
+    <value>Jordanian dinar</value>
+  </data>
+  <data name="curJPY" xml:space="preserve">
+    <value>Japanese yen</value>
+  </data>
+  <data name="curKGS" xml:space="preserve">
+    <value>Kyrgyz soms</value>
+  </data>
+  <data name="curKHL" xml:space="preserve">
+    <value>Cambodian Riel</value>
+  </data>
+  <data name="curKRW" xml:space="preserve">
+    <value>Korean Republic Won</value>
+  </data>
+  <data name="curKWD" xml:space="preserve">
+    <value>Kuwaiti dinar</value>
+  </data>
+  <data name="curKZT" xml:space="preserve">
+    <value>Kazakhstan tenge</value>
+  </data>
+  <data name="curLAK" xml:space="preserve">
+    <value>Lao kip</value>
+  </data>
+  <data name="curLKR" xml:space="preserve">
+    <value>Sri Lankan Rupee</value>
+  </data>
+  <data name="curLTL" xml:space="preserve">
+    <value>Lithuanian litas</value>
+  </data>
+  <data name="curLVL" xml:space="preserve">
+    <value>Latvian lats</value>
+  </data>
+  <data name="curMDL" xml:space="preserve">
+    <value>Moldovan leu</value>
+  </data>
+  <data name="curMKD" xml:space="preserve">
+    <value>Macedonian Denar</value>
+  </data>
+  <data name="curMNT" xml:space="preserve">
+    <value>Mongolian Tugrik</value>
+  </data>
+  <data name="curMXN" xml:space="preserve">
+    <value>Mexican peso</value>
+  </data>
+  <data name="curMYR" xml:space="preserve">
+    <value>Malaysian ringgit</value>
+  </data>
+  <data name="curNIO" xml:space="preserve">
+    <value>Nicaraguan Córdoba</value>
+  </data>
+  <data name="curNOK" xml:space="preserve">
+    <value>Norwegian Krone</value>
+  </data>
+  <data name="curNZD" xml:space="preserve">
+    <value>New Zealand dollar</value>
+  </data>
+  <data name="curPHP" xml:space="preserve">
+    <value>Philippine Peso</value>
+  </data>
+  <data name="curPLN" xml:space="preserve">
+    <value>Polish Zloty</value>
+  </data>
+  <data name="curPRB" xml:space="preserve">
+    <value>Transnistrian ruble</value>
+  </data>
+  <data name="curRON" xml:space="preserve">
+    <value>New Romanian leu</value>
+  </data>
+  <data name="curRSD" xml:space="preserve">
+    <value>Serbian dinar</value>
+  </data>
+  <data name="curRUB" xml:space="preserve">
+    <value>Russian ruble</value>
+  </data>
+  <data name="curSEK" xml:space="preserve">
+    <value>Swedish Krona</value>
+  </data>
+  <data name="curSGD" xml:space="preserve">
+    <value>Singapore dollar</value>
+  </data>
+  <data name="curTHB" xml:space="preserve">
+    <value>Thai baht</value>
+  </data>
+  <data name="curTJS" xml:space="preserve">
+    <value>Tajik somoni</value>
+  </data>
+  <data name="curTMT" xml:space="preserve">
+    <value>New Turkmen manat</value>
+  </data>
+  <data name="curTRY" xml:space="preserve">
+    <value>Turkish Lira</value>
+  </data>
+  <data name="curTWD" xml:space="preserve">
+    <value>New Taiwan Dollar</value>
+  </data>
+  <data name="curUAH" xml:space="preserve">
+    <value>Ukrainian hryvnia</value>
+  </data>
+  <data name="curUSD" xml:space="preserve">
+    <value>U.S. dollar</value>
+  </data>
+  <data name="curUZS" xml:space="preserve">
+    <value>Uzbekistan sum</value>
+  </data>
+  <data name="curVND" xml:space="preserve">
+    <value>Vietnamese dong</value>
+  </data>
+  <data name="curZAR" xml:space="preserve">
+    <value>South African Rand</value>
+  </data>
+  <data name="RIDSetErrorMSG" xml:space="preserve">
+    <value>- First day of financical month must be in range 1 - 31</value>
+  </data>
+  <data name="RIDSetErrorMSG0" xml:space="preserve">
+    <value>- Mandatory spendings and optional costs can't be 0%</value>
+  </data>
+  <data name="RIDSetErrorMSG100" xml:space="preserve">
+    <value>- Spendings sum must be 100%</value>
+  </data>
+  <data name="RIDSetFinDebet.Header" xml:space="preserve">
+    <value>Savings</value>
+  </data>
+  <data name="RIDSetFinMand.Header" xml:space="preserve">
+    <value>Mandatory spendings</value>
+  </data>
+  <data name="RIDSetFinMonth.Header" xml:space="preserve">
+    <value>First day of financical month</value>
+  </data>
+  <data name="RIDSetFinNonMand.Header" xml:space="preserve">
+    <value>Optional costs</value>
+  </data>
+  <data name="cmdPlanned.Label" xml:space="preserve">
+    <value>Scheduled payments</value>
+  </data>
+  <data name="PlannedContextChange.Text" xml:space="preserve">
+    <value>Write with revisions</value>
+  </data>
+  <data name="PlannedContextDelete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="PlannedContextWrite.Text" xml:space="preserve">
+    <value>Write now</value>
+  </data>
+  <data name="PlannedOpEmpty.Text" xml:space="preserve">
+    <value>No scheduled payments</value>
+  </data>
+  <data name="cmdPeriodic.Label" xml:space="preserve">
+    <value>Periodic operations</value>
+  </data>
+  <data name="PlannedContextShow.Text" xml:space="preserve">
+    <value>Show operations</value>
+  </data>
+  <data name="PeriodicOpEmpty.Text" xml:space="preserve">
+    <value>No periodic operations</value>
+  </data>
+  <data name="StateDeleted" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
+  <data name="StatePlanned" xml:space="preserve">
+    <value>Planned</value>
+  </data>
+  <data name="StateProcessed" xml:space="preserve">
+    <value>Processed</value>
+  </data>
+  <data name="PeriodDay" xml:space="preserve">
+    <value>day</value>
+  </data>
+  <data name="PeriodMonth" xml:space="preserve">
+    <value>month</value>
+  </data>
+  <data name="PeriodStr" xml:space="preserve">
+    <value>Every {0} {1}</value>
+  </data>
+  <data name="PeriodStrW" xml:space="preserve">
+    <value>Every {0} {1}</value>
+  </data>
+  <data name="PeriodWeek" xml:space="preserve">
+    <value>week</value>
+  </data>
+  <data name="PeriodYear" xml:space="preserve">
+    <value>year</value>
+  </data>
+  <data name="RateUsNo" xml:space="preserve">
+    <value>Maybe later</value>
+  </data>
+  <data name="RateUsText" xml:space="preserve">
+    <value>If you like our app, please rate us in the store</value>
+  </data>
+  <data name="RateUsYes" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PeriodicSatusDone" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="PeriodicStatusActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="IncomeDistributionReportMsgNoBudget" xml:space="preserve">
+    <value>Fill income budget to get better report data</value>
+  </data>
+  <data name="PeriodOnce" xml:space="preserve">
+    <value>One time</value>
+  </data>
+  <data name="PlannedForToday" xml:space="preserve">
+    <value>Scheduled for today</value>
+  </data>
+  <data name="ScheduledFilterAll.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="ScheduledFilterCaption.Text" xml:space="preserve">
+    <value>Display mode</value>
+  </data>
+  <data name="ScheduledFilterDeleted.Text" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
+  <data name="ScheduledFilterPlanned.Text" xml:space="preserve">
+    <value>Scheduled</value>
+  </data>
+  <data name="ScheduledFilterProcessed.Text" xml:space="preserve">
+    <value>Processed</value>
+  </data>
+  <data name="PlannedContextDeleteChain.Text" xml:space="preserve">
+    <value>Delete chain</value>
+  </data>
+  <data name="PlannedContextShowChain.Text" xml:space="preserve">
+    <value>Show chain</value>
+  </data>
+  <data name="ScheduleEndDate.Header" xml:space="preserve">
+    <value>End date</value>
+  </data>
+  <data name="ScheduleEndDateUse.OnContent" xml:space="preserve">
+    <value>Set end date</value>
+  </data>
+  <data name="ScheduleModeDay.Header" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="ScheduleModeMonth.Header" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="ScheduleModeWeek.Header" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="ScheduleModeYear.Header" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="ScheduleOn.OnContent" xml:space="preserve">
+    <value>Repeat payment</value>
+  </data>
+  <data name="SchedulePeriodHeader.Text" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="ScheduleRepeatDay" xml:space="preserve">
+    <value>Repeat every</value>
+  </data>
+  <data name="ScheduleRepeatWeek" xml:space="preserve">
+    <value>Repeat every</value>
+  </data>
+  <data name="ScheduleSymbDay" xml:space="preserve">
+    <value>day</value>
+  </data>
+  <data name="ScheduleSymbMonth" xml:space="preserve">
+    <value>month</value>
+  </data>
+  <data name="ScheduleSymbWeek" xml:space="preserve">
+    <value>week</value>
+  </data>
+  <data name="ScheduleSymbYear" xml:space="preserve">
+    <value>year</value>
+  </data>
+  <data name="ScheduleWeekFri.Content" xml:space="preserve">
+    <value>Fr</value>
+  </data>
+  <data name="ScheduleWeekMon.Content" xml:space="preserve">
+    <value>Mo</value>
+  </data>
+  <data name="ScheduleWeekSat.Content" xml:space="preserve">
+    <value>Sa</value>
+  </data>
+  <data name="ScheduleWeekSun.Content" xml:space="preserve">
+    <value>Su</value>
+  </data>
+  <data name="ScheduleWeekThu.Content" xml:space="preserve">
+    <value>Th</value>
+  </data>
+  <data name="ScheduleWeekTue.Content" xml:space="preserve">
+    <value>Tu</value>
+  </data>
+  <data name="ScheduleWeekWed.Content" xml:space="preserve">
+    <value>We</value>
+  </data>
+  <data name="ScheduleDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ScheduleDialog.SecondaryButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CmdSchedule.Label" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="ScheduledLate.Text" xml:space="preserve">
+    <value>You have a late payments</value>
+  </data>
+  <data name="ScheduledLateHide.Content" xml:space="preserve">
+    <value>Hide</value>
+  </data>
+  <data name="ScheduledLateShow.Content" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="SpendingsCalendarName.Header" xml:space="preserve">
+    <value>Spendings calendar</value>
+  </data>
+  <data name="ReportsSpendingsLegendPlanned.Text" xml:space="preserve">
+    <value>Scheduled costs</value>
+  </data>
+  <data name="ReportsSpendingsLegendProcessed.Text" xml:space="preserve">
+    <value>Current costs</value>
+  </data>
+  <data name="ReportsSpendingsLegendPlannedAbn.Text" xml:space="preserve">
+    <value>Highest scheduled costs</value>
+  </data>
+  <data name="ReportsSpendingsLegendProcessedAbn.Text" xml:space="preserve">
+    <value>Highest costs</value>
+  </data>
+  <data name="BudgetCategoryHeader.Text" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="BudgetCategoryIncome.Text" xml:space="preserve">
+    <value>Income</value>
+  </data>
+  <data name="BudgetCategoryOutcome.Text" xml:space="preserve">
+    <value>Outcome</value>
+  </data>
+  <data name="BudgetTabCategory.Header" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="AccountEditAmount.Header" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="AccountEditCapitalization.OnContent" xml:space="preserve">
+    <value>Capitalization</value>
+  </data>
+  <data name="AccountEditDepositOutAccount" xml:space="preserve">
+    <value>Deposit credited from account</value>
+  </data>
+  <data name="AccountEditDepositTerm" xml:space="preserve">
+    <value>Term of the deposit</value>
+  </data>
+  <data name="AccountEditDontCreate" xml:space="preserve">
+    <value>Don't add transfer</value>
+  </data>
+  <data name="AccountEditLoanInAccount" xml:space="preserve">
+    <value>Fund transfered to the account</value>
+  </data>
+  <data name="AccountEditLoanTerm" xml:space="preserve">
+    <value>Term of the loan</value>
+  </data>
+  <data name="AccountEditOpenDate.Header" xml:space="preserve">
+    <value>Opening date</value>
+  </data>
+  <data name="AccountEditPaymentModeConst" xml:space="preserve">
+    <value>Constant</value>
+  </data>
+  <data name="AccountEditPaymentModeFloat" xml:space="preserve">
+    <value>Floating</value>
+  </data>
+  <data name="AccountEditPaymentsEnd" xml:space="preserve">
+    <value>At the end</value>
+  </data>
+  <data name="AccountEditPaymentsMonth" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="AccountEditPaymentsQuarter" xml:space="preserve">
+    <value>Quarterly</value>
+  </data>
+  <data name="AccountEditPecentMode.Header" xml:space="preserve">
+    <value>Payments</value>
+  </data>
+  <data name="AccountEditPercentage.Header" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="AccountEditTermTitleMonth" xml:space="preserve">
+    <value>m.</value>
+  </data>
+  <data name="AccountEditTermTitleYear" xml:space="preserve">
+    <value>y.</value>
+  </data>
+  <data name="AccountValidationDepositAmount" xml:space="preserve">
+    <value>- Deposit amount should be greater than 0</value>
+  </data>
+  <data name="AccountValidationDepositTerm" xml:space="preserve">
+    <value>- Enter the deposit term</value>
+  </data>
+  <data name="AccountValidationLoanAmount" xml:space="preserve">
+    <value>- Loan amount should be greater than 0</value>
+  </data>
+  <data name="AccountValidationLoanTerm" xml:space="preserve">
+    <value>- Enter the loan term</value>
+  </data>
+  <data name="AccountEditStartBalance.Header" xml:space="preserve">
+    <value>Start balance</value>
+  </data>
+</root>

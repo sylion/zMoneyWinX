@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="zMoneyWinX.View.PageAbout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:zMoneyWinX.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer Margin="0,20,0,0" VerticalScrollBarVisibility="Auto">
+            <StackPanel HorizontalAlignment="Stretch">
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <TextBlock Text="zMoney WinX" FontSize="16" HorizontalAlignment="Center"/>
+                    <TextBlock Name="Version" Text="Verion 1.1" FontSize="16" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Unofficial zenmoney.ru client" FontSize="16" HorizontalAlignment="Center" Margin="0,5"/>
+                    <TextBlock Text="Sy (c) 2016" FontSize="16" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Yaroslav Savchenko" FontSize="16" HorizontalAlignment="Center"/>
+                    <HyperlinkButton Content="y.savchenko@outlook.com" HorizontalAlignment="Center" NavigateUri="Mailto:y.savchenko@outlook.com"/>
+                    <HyperlinkButton Content="zMoney WinX VK.com page" HorizontalAlignment="Center" NavigateUri="https://vk.com/zmoneywinx"/>
+                    <HyperlinkButton Content="ZenMoney website" HorizontalAlignment="Center" NavigateUri="https://zenmoney.ru"/>
+                    <HyperlinkButton Content="ZenMoney official VK.com page" HorizontalAlignment="Center" NavigateUri="https://vk.com/zenmoney_ru"/>
+                    <HyperlinkButton Content="ZenMoney Rules and Privacy policy" HorizontalAlignment="Center" NavigateUri="https://zenmoney.ru/rules/"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,20,0,0" HorizontalAlignment="Stretch">
+                    <TextBlock Text="Licenses" FontSize="16" FontWeight="Black" HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="Application insights" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    <TextBlock Text="Copyright (c) Microsoft" FontSize="16" HorizontalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="License:" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <HyperlinkButton Content="Application Insights Tools and SDK License" HorizontalAlignment="Center" VerticalAlignment="Center" NavigateUri="https://www.visualstudio.com/support/dn614805"/>
+                    </StackPanel>
+
+                    <TextBlock Text="SQLite" FontWeight="Bold" FontSize="16" Foreground="Black" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="Copyright" FontSize="16" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,5,0"/>
+                        <HyperlinkButton Content="Public Domain" HorizontalAlignment="Center" VerticalAlignment="Center" NavigateUri="https://en.wikipedia.org/wiki/Public_domain"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="License:" FontSize="16" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <HyperlinkButton Content="Copyright Release for Contributions To SQLite" HorizontalAlignment="Center" VerticalAlignment="Center" NavigateUri="http://www.sqlite.org/copyright-release.html"/>
+                    </StackPanel>
+
+                    <TextBlock Text="Newtonsoft.JSON" FontWeight="Bold" FontSize="16" Foreground="Black" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    <TextBlock Text="Copyright (c) James Newton-King " FontSize="16" Foreground="Black" HorizontalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="License:" FontSize="16" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <HyperlinkButton Content="MIT" HorizontalAlignment="Center" VerticalAlignment="Center" NavigateUri="https://raw.githubusercontent.com/JamesNK/Newtonsoft.Json/master/LICENSE.md"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="Icons made by" FontSize="16" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <HyperlinkButton Content="Freepik" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0" NavigateUri="http://www.flaticon.com/authors/freepik"/>
+                        <TextBlock Text="from" FontSize="16" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <HyperlinkButton Content="www.flaticon.com" HorizontalAlignment="Center" VerticalAlignment="Center" NavigateUri="http://www.flaticon.com"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

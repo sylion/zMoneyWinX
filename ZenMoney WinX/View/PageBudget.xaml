@@ -1,0 +1,219 @@
+﻿<Page
+    x:Class="zMoneyWinX.View.PageBudget"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:zMoneyWinX.View"
+    xmlns:Model="using:zMoneyWinX.Model"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/ZenPivot.xaml" />
+                <ResourceDictionary Source="/Themes/ZenTextBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Model:AmountToStr x:Key="AmountToStr"/>
+            <Model:BudgetTagToWeight x:Key="BudgetTagToWeight"/>
+
+            <DataTemplate x:Name="BudgetIncomeItemTemplate" x:DataType="Model:Budget">
+                <Grid Height="45" VerticalAlignment="Top" BorderBrush="LightGray" BorderThickness="0,0,0,0.5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="{x:Bind displayTag}" FontWeight="{Binding Tag, Converter={StaticResource BudgetTagToWeight}}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" Text="{x:Bind Income, Converter={StaticResource AmountToStr}}" FontWeight="{Binding Tag, Converter={StaticResource BudgetTagToWeight}}" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+            </DataTemplate>
+
+            <DataTemplate x:Name="BudgetOutcomeItemTemplate" x:DataType="Model:Budget">
+                <Grid Height="45" VerticalAlignment="Top" BorderBrush="LightGray" BorderThickness="0,0,0,0.5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="{x:Bind displayTag}" FontWeight="{Binding Tag, Converter={StaticResource BudgetTagToWeight}}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" Text="{x:Bind Outcome, Converter={StaticResource AmountToStr}}" FontWeight="{Binding Tag, Converter={StaticResource BudgetTagToWeight}}" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+            </DataTemplate>
+
+            <Style x:Name="ListItemContainerStyle" TargetType="ListViewItem">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="MinHeight" Value="0"/>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Name="Root">
+            <Pivot Margin="5" SelectionChanged="Pivot_SelectionChanged">
+                <PivotItem x:Uid="PivotOutcome">
+                    <Grid Name="BudgetOutcomePanel">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Grid.Row="0" Grid.Column="0" Click="btnPrev_Click" HorizontalAlignment="Right" Background="Transparent" Margin="5,0">
+                                <Button.Content>
+                                    <FontIcon Glyph="&#xE016;" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Segoe MDL2 Assets" 
+                                              FontWeight="SemiBold" Foreground="#FFF04137" FontSize="16"/>
+                                </Button.Content>
+                            </Button>
+
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CurrentDate}" 
+                                           HorizontalAlignment="Center" FontWeight="SemiBold"
+                                           VerticalAlignment="Center" Foreground="#FFF04137" 
+                                           FontSize="16" Margin="5,0"/>
+
+                            <Button Grid.Row="0" Grid.Column="2" Click="btnNext_Click" HorizontalAlignment="Left"  Background="Transparent" Margin="5,0">
+                                <Button.Content>
+                                    <FontIcon Glyph="&#xE017;" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Segoe MDL2 Assets" 
+                                              FontWeight="SemiBold" Foreground="#FFF04137" FontSize="16"/>
+                                </Button.Content>
+                            </Button>
+                        </Grid>
+
+                        <ListView Grid.Row="1" Name="BudgetOutcomeList"
+                                  SelectionMode="None"
+                                  ItemTemplate="{StaticResource BudgetOutcomeItemTemplate}"
+                                  ItemContainerStyle="{StaticResource ListItemContainerStyle}"
+                                  IsItemClickEnabled="True"
+                                  ItemClick="BudgetOutcomeList_ItemClick"
+                                  ShowsScrollingPlaceholders="True"/>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Uid="PivotIncome">
+                    <Grid Name="BudgetIncomePanel">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Grid.Row="0" Grid.Column="0" Click="btnPrev_Click" HorizontalAlignment="Right" Background="Transparent" Margin="5,0">
+                                <Button.Content>
+                                    <FontIcon Glyph="&#xE016;" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Segoe MDL2 Assets" 
+                                              FontWeight="SemiBold" Foreground="#FFF04137" FontSize="16"/>
+                                </Button.Content>
+                            </Button>
+
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CurrentDate}" 
+                                           HorizontalAlignment="Center" FontWeight="SemiBold"
+                                           VerticalAlignment="Center" Foreground="#FFF04137" 
+                                           FontSize="16" Margin="5,0"/>
+
+                            <Button Grid.Row="0" Grid.Column="2" Click="btnNext_Click" HorizontalAlignment="Left"  Background="Transparent" Margin="5,0">
+                                <Button.Content>
+                                    <FontIcon Glyph="&#xE017;" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontFamily="Segoe MDL2 Assets" 
+                                              FontWeight="SemiBold" Foreground="#FFF04137" FontSize="16"/>
+                                </Button.Content>
+                            </Button>
+                        </Grid>
+
+                        <ListView Grid.Row="1" Name="BudgetIncomeList"
+                                  SelectionMode="None"
+                                  ItemTemplate="{StaticResource BudgetIncomeItemTemplate}"
+                                  ItemContainerStyle="{StaticResource ListItemContainerStyle}"
+                                  IsItemClickEnabled="True"
+                                  ItemClick="BudgetIncomeList_ItemClick"
+                                  ShowsScrollingPlaceholders="True"/>
+                    </Grid>
+                </PivotItem>
+                <PivotItem x:Uid="BudgetTabCategory">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <ListView Grid.Row="1" Name="BudgetTags"
+                                  SelectionMode="None"
+                                  ItemContainerStyle="{StaticResource ListItemContainerStyle}"
+                                  IsItemClickEnabled="False"
+                                  ShowsScrollingPlaceholders="True">
+                            <ListView.HeaderTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Column="0" x:Uid="BudgetCategoryHeader" HorizontalAlignment="Center"/>
+                                        <TextBlock Grid.Column="1" x:Uid="BudgetCategoryIncome" HorizontalAlignment="Center"/>
+                                        <TextBlock Grid.Column="2" x:Uid="BudgetCategoryOutcome" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.HeaderTemplate>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Column="0" Text="{Binding TagName}"/>
+                                        <CheckBox Grid.Column="1" IsChecked="{Binding Income, Mode=TwoWay}"/>
+                                        <CheckBox Grid.Column="2" IsChecked="{Binding Outcome, Mode=TwoWay}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </PivotItem>
+            </Pivot>
+        </Grid>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ContentStates">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Root.HorizontalAlignment" Value="Center" />
+                        <Setter Target="Root.Width" Value="720" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Root.HorizontalAlignment" Value="Stretch" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>

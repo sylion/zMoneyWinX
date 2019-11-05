@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="zMoneyWinX.View.PageMerchantsEdit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:zMoneyWinX.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Loaded="Page_Loaded"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/ZenPivot.xaml" />
+                <ResourceDictionary Source="/Themes/ZenTextBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <CommandBar Grid.Row="0" Name="CmdBar" Background="#FFF04137" Foreground="White">
+            <AppBarButton Name="CmdDelete" x:Uid="CmdDelete" Click="CmdClick" Icon="Delete" FontSize="8" Foreground="White" Tag="Delete" Visibility="Collapsed"/>
+            <AppBarButton Name="CmdSave" x:Uid="CmdSave" Click="CmdClick" Icon="Save" FontSize="8" Foreground="White" Tag="Save"/>
+            <AppBarButton Name="CmdCancel" x:Uid="CmdCancel" Click="CmdClick" Icon="Cancel" FontSize="8" Foreground="White" Tag="Cancel"/>
+        </CommandBar>
+        <ProgressBar Grid.Row="0" Name="LoadProgress" Foreground="White" Visibility="Collapsed" IsIndeterminate="True" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+
+        <Grid Grid.Row="1" Name="Root" Padding="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Uid="TitleText" Text="{Binding editTitle, Mode=TwoWay}" Margin="5"/>
+        </Grid>
+        
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ContentStates">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Root.HorizontalAlignment" Value="Center" />
+                        <Setter Target="Root.Width" Value="720" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Root.HorizontalAlignment" Value="Stretch" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>

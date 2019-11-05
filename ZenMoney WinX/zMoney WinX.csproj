@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{17D9B396-0F14-43A5-95A2-F8663620A6BF}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zMoneyWinX</RootNamespace>
+    <AssemblyName>zMoney WinX</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>zMoney WinX_StoreKey.pfx</PackageCertificateKeyFile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>29D85F7D4BE3F571C4E6E9086BC284D9BF9F4C84</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="project.json" />
+    <PRIResource Include="Strings\uk\Resources.resw" />
+    <None Include="zMoney WinX_StoreKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CurrencyTextBox.cs" />
+    <Compile Include="EditObjects\AcountEditController.cs" />
+    <Compile Include="EditObjects\EditObjBudget.cs" />
+    <Compile Include="Extensions\Converters.cs" />
+    <Compile Include="Extensions\DBInitializer.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Model\Base\Account.cs" />
+    <Compile Include="Model\Base\Budget.cs" />
+    <Compile Include="Model\Base\Company.cs" />
+    <Compile Include="Model\Base\User.cs" />
+    <Compile Include="Model\DBObject.cs" />
+    <Compile Include="Model\Base\Instrument.cs" />
+    <Compile Include="Model\Base\Merchant.cs" />
+    <Compile Include="Model\Reminder.cs" />
+    <Compile Include="Model\ReminderMarker.cs" />
+    <Compile Include="Model\Base\Tag.cs" />
+    <Compile Include="Model\Transaction.cs" />
+    <Compile Include="Model\TransactionFilter.cs" />
+    <Compile Include="Model\Base\Transaction.cs" />
+    <Compile Include="Reports\AccountCurrencyReport.cs" />
+    <Compile Include="Reports\CategoryReport.cs" />
+    <Compile Include="Reports\IncomeDistribution.cs" />
+    <Compile Include="Reports\SpendingsCalendar.cs" />
+    <Compile Include="ViewModel\AccountBalanceHelper.cs" />
+    <Compile Include="ViewModel\AccountViewModel.cs" />
+    <Compile Include="ViewModel\BudgetViewModel.cs" />
+    <Compile Include="ViewModel\CurrencyHelper.cs" />
+    <Compile Include="ViewModel\DataProvider.cs" />
+    <Compile Include="Extensions\GroupInfoList.cs" />
+    <Compile Include="Extensions\INotifyProperty.cs" />
+    <Compile Include="Extensions\Signals.cs" />
+    <Compile Include="ViewModel\ScheduledOperationsHelper.cs" />
+    <Compile Include="ViewModel\TransactionTagHelper.cs" />
+    <Compile Include="ViewModel\TransactionScheduleHelper.cs" />
+    <Compile Include="View\ContentAccountAlias.xaml.cs">
+      <DependentUpon>ContentAccountAlias.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ContentSchedule.xaml.cs">
+      <DependentUpon>ContentSchedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageAccountsEdit.xaml.cs">
+      <DependentUpon>PageAccountsEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageBudget.xaml.cs">
+      <DependentUpon>PageBudget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageBudgetEdit.xaml.cs">
+      <DependentUpon>PageBudgetEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageCurrencies.xaml.cs">
+      <DependentUpon>PageCurrencies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageIncomeDistributionSettings.xaml.cs">
+      <DependentUpon>PageIncomeDistributionSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageMerchants.xaml.cs">
+      <DependentUpon>PageMerchants.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageMerchantsEdit.xaml.cs">
+      <DependentUpon>PageMerchantsEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageReports.xaml.cs">
+      <DependentUpon>PageReports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageTags.xaml.cs">
+      <DependentUpon>PageTags.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageTagsEdit.xaml.cs">
+      <DependentUpon>PageTagsEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageTransactionsFilter.xaml.cs">
+      <DependentUpon>PageTransactionsFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageTransactionsEdit.xaml.cs">
+      <DependentUpon>PageTransactionsEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MerchantViewModel.cs" />
+    <Compile Include="ViewModel\TagViewModel.cs" />
+    <Compile Include="ViewModel\TransactionViewModel.cs" />
+    <Compile Include="Extensions\IconSet.cs" />
+    <Compile Include="EditObjects\EditObjMerchant.cs" />
+    <Compile Include="EditObjects\EditObjTag.cs" />
+    <Compile Include="EditObjects\EditObjTransaction.cs" />
+    <Compile Include="Client\OAuth.cs" />
+    <Compile Include="View\PageAbout.xaml.cs">
+      <DependentUpon>PageAbout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageAccounts.xaml.cs">
+      <DependentUpon>PageAccounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageAuth.xaml.cs">
+      <DependentUpon>PageAuth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PagePIN.xaml.cs">
+      <DependentUpon>PagePIN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageSettings.xaml.cs">
+      <DependentUpon>PageSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\Extensions.cs" />
+    <Compile Include="View\PageTransactions.xaml.cs">
+      <DependentUpon>PageTransactions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Command.cs" />
+    <Compile Include="Presentation\MenuItem.cs" />
+    <Compile Include="Presentation\NotifyPropertyChanged.cs" />
+    <Compile Include="Presentation\ObjectToMenuItemConverter.cs" />
+    <Compile Include="Presentation\ShellViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\SwipeableSplitView.cs" />
+    <Compile Include="Client\Client.cs" />
+    <Compile Include="Client\SettingsManager.cs" />
+    <Compile Include="Client\SyncManager.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Budget.cs" />
+    <Compile Include="Model\Company.cs" />
+    <Compile Include="Model\Base\Country.cs" />
+    <Compile Include="Extensions\Deletion.cs" />
+    <Compile Include="Extensions\DiffObject.cs" />
+    <Compile Include="Extensions\DiffResponseObject.cs" />
+    <Compile Include="Model\Instrument.cs" />
+    <Compile Include="Model\Merchant.cs" />
+    <Compile Include="Model\Base\Reminder.cs" />
+    <Compile Include="Model\Base\ReminderMarker.cs" />
+    <Compile Include="Model\Tag.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="View\PageTransactionsPlanned.xaml.cs">
+      <DependentUpon>PageTransactionsPlanned.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <PRIResource Include="Strings\en-US\Resources.resw" />
+    <PRIResource Include="Strings\ru\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icons\ccard.png" />
+    <Content Include="Assets\Icons\checking.png" />
+    <Content Include="Assets\Icons\credit.png" />
+    <Content Include="Assets\Icons\debt.png" />
+    <Content Include="Assets\Icons\deposit.png" />
+    <Content Include="Assets\Icons\wallet.png" />
+    <Content Include="Assets\SecSquare150x150Logo.scale-100.png" />
+    <Content Include="Assets\SecSquare150x150Logo.scale-200.png" />
+    <Content Include="Assets\SecSquare150x150Logo.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\tags\0000_none.png" />
+    <Content Include="Assets\tags\1001_bunch_ingredients.png" />
+    <Content Include="Assets\tags\1002_diningroom.png" />
+    <Content Include="Assets\tags\2001_beer.png" />
+    <Content Include="Assets\tags\2002_dancing.png" />
+    <Content Include="Assets\tags\2003_film_reel.png" />
+    <Content Include="Assets\tags\2004_champagne.png" />
+    <Content Include="Assets\tags\2005_birthday.png" />
+    <Content Include="Assets\tags\2006_candy.png" />
+    <Content Include="Assets\tags\2007_controller.png" />
+    <Content Include="Assets\tags\2008_books.png" />
+    <Content Include="Assets\tags\2501_hand_biceps.png" />
+    <Content Include="Assets\tags\2502_football.png" />
+    <Content Include="Assets\tags\2503_swimming.png" />
+    <Content Include="Assets\tags\2504_ping_pong.png" />
+    <Content Include="Assets\tags\2505_paint_palette.png" />
+    <Content Include="Assets\tags\3001_bus2.png" />
+    <Content Include="Assets\tags\3002_cars.png" />
+    <Content Include="Assets\tags\3003_bicycle.png" />
+    <Content Include="Assets\tags\3003_gas_station.png" />
+    <Content Include="Assets\tags\3004_motorcycle.png" />
+    <Content Include="Assets\tags\3004_taxi.png" />
+    <Content Include="Assets\tags\3005_train.png" />
+    <Content Include="Assets\tags\3501_gas_station.png" />
+    <Content Include="Assets\tags\3502_work.png" />
+    <Content Include="Assets\tags\4001_airport.png" />
+    <Content Include="Assets\tags\4002_beach.png" />
+    <Content Include="Assets\tags\4501_phone2.png" />
+    <Content Include="Assets\tags\5001_coat.png" />
+    <Content Include="Assets\tags\5002_shoe_woman.png" />
+    <Content Include="Assets\tags\5003_portrait_mode.png" />
+    <Content Include="Assets\tags\5004_barbers_scissors.png" />
+    <Content Include="Assets\tags\5400_garage.png" />
+    <Content Include="Assets\tags\5401_exterior.png" />
+    <Content Include="Assets\tags\5402_bath.png" />
+    <Content Include="Assets\tags\5403_broom.png" />
+    <Content Include="Assets\tags\5501_armchair.png" />
+    <Content Include="Assets\tags\5502_retro_tv.png" />
+    <Content Include="Assets\tags\5503_electrical.png" />
+    <Content Include="Assets\tags\5504_electric_teapot.png" />
+    <Content Include="Assets\tags\5505_laptop.png" />
+    <Content Include="Assets\tags\5506_mobile.png" />
+    <Content Include="Assets\tags\5507_lamp.png" />
+    <Content Include="Assets\tags\5508_coffee_maker.png" />
+    <Content Include="Assets\tags\5509_camera.png" />
+    <Content Include="Assets\tags\5510_potted_plant.png" />
+    <Content Include="Assets\tags\6001_children.png" />
+    <Content Include="Assets\tags\6002_stroller.png" />
+    <Content Include="Assets\tags\6003_carousel.png" />
+    <Content Include="Assets\tags\6003_man.png" />
+    <Content Include="Assets\tags\6004_woman.png" />
+    <Content Include="Assets\tags\6501_doctor_suitecase.png" />
+    <Content Include="Assets\tags\6502_pill.png" />
+    <Content Include="Assets\tags\6503_doctor.png" />
+    <Content Include="Assets\tags\6505_smoking.png" />
+    <Content Include="Assets\tags\7001_gift.png" />
+    <Content Include="Assets\tags\7002_literature.png" />
+    <Content Include="Assets\tags\7501_tree.png" />
+    <Content Include="Assets\tags\7502_campfire.png" />
+    <Content Include="Assets\tags\7503_flower.png" />
+    <Content Include="Assets\tags\7901_cat.png" />
+    <Content Include="Assets\tags\7902_dog.png" />
+    <Content Include="Assets\tags\7903_fish.png" />
+    <Content Include="Assets\tags\8001_question.png" />
+    <Content Include="Assets\tags\8002_globe.png" />
+    <Content Include="Assets\tags\8003_internet_explorer.png" />
+    <Content Include="Assets\tags\8004_musical.png" />
+    <Content Include="Assets\tags\8501_factory.png" />
+    <Content Include="Assets\tags\8502_training.png" />
+    <Content Include="Assets\tags\8503_handshake.png" />
+    <Content Include="Assets\tags\9001_cash_receiving.png" />
+    <Content Include="Assets\tags\9002_money_bag.png" />
+    <Content Include="Assets\tags\9003_banknotes.png" />
+    <Content Include="Assets\tags\9004_wallet.png" />
+    <Content Include="Assets\tags\9005_gold_bars.png" />
+    <Content Include="Assets\tags\9006_safe.png" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Assets\tags\transDeptM.png" />
+    <Content Include="Assets\tags\transDeptP.png" />
+    <Content Include="Assets\tags\transTransfer.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Themes\ZenLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ZenFilter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ContentAccountAlias.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ContentSchedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageAbout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PageAccounts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PageAccountsEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageAuth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageBudget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageBudgetEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageCurrencies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageIncomeDistributionSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageMerchants.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageMerchantsEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PagePIN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageReports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageTags.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageTagsEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageTransactionsFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PageTransactions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PageTransactionsEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ZenTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ZenPivot.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PageTransactionsPlanned.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

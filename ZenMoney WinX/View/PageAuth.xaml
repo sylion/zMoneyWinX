@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="zMoneyWinX.View.PageAuth"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:zMoneyWinX.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/ZenLogin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="#FFF04137">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Name="NeedClose" x:Uid="NeedClose" Foreground="White" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10"/>
+                <Rectangle Name="Logo" Width="310" Height="150" Margin="0,0,0,20">
+                    <Rectangle.Fill>
+                        <ImageBrush>
+                            <ImageBrush.ImageSource>
+                                <BitmapImage UriSource="/Assets/SplashScreen.png" DecodePixelWidth="310" DecodePixelHeight="150" DecodePixelType="Logical" ImageOpened="WhenLoaded"/>
+                            </ImageBrush.ImageSource>
+                        </ImageBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <StackPanel Name="LoadBox" Width="310" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <ProgressRing Foreground="White" Width="40" Height="40" IsActive="True"/>
+                    <TextBlock Name="Sync" x:Uid="Sync" FontSize="16" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                </StackPanel>
+                <StackPanel Name="LoginBox" Width="310" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
+                    <TextBlock x:Uid="txtAuth" FontSize="16" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock x:Uid="txtLogin" FontSize="16" Foreground="White" Margin="2,5"/>
+                    <TextBox FontSize="16" Name="usr" Margin="2,5" IsSpellCheckEnabled="False"/>
+                    <TextBlock x:Uid="txtPassword" Foreground="White" FontSize="16" Margin="2,5"/>
+                    <PasswordBox FontSize="16" Name="pwd" Margin="2,5"/>
+                    <Grid Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <HyperlinkButton x:Uid="linkRegister" Grid.Column="0" Foreground="White" NavigateUri="https://zenmoney.ru/"/>
+                        <Button Grid.Column="1" Name="btnLogin" x:Uid="btnLogin" Background="White" HorizontalAlignment="Right" Click="btnLogin_Click"/>
+                    </Grid>
+                    <TextBlock Name="ConnErr" x:Uid="ConnErr" TextWrapping="WrapWholeWords" FontSize="16" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                    <TextBlock Name="LogErr" x:Uid="LogErr" TextWrapping="WrapWholeWords" FontSize="16" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <HyperlinkButton Grid.Row="1" Foreground="White" HorizontalAlignment="Center" 
+                         Visibility="{Binding ElementName=LoginBox, Path=Visibility}"
+                         Content="Privacy policy" NavigateUri="https://zenmoney.ru/rules/"/>
+    </Grid>
+</Page>

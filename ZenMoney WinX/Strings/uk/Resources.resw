@@ -1,0 +1,1248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountsActive" xml:space="preserve">
+    <value>Рахунки</value>
+  </data>
+  <data name="AccountsArchive" xml:space="preserve">
+    <value>Архівні рахунки</value>
+  </data>
+  <data name="AccountsIOwe" xml:space="preserve">
+    <value>Я винен</value>
+  </data>
+  <data name="AccountsOweme" xml:space="preserve">
+    <value>Мені винні</value>
+  </data>
+  <data name="Balance.Text" xml:space="preserve">
+    <value>Баланс</value>
+  </data>
+  <data name="btnLogin.Content" xml:space="preserve">
+    <value>Увійти</value>
+  </data>
+  <data name="SettingsBtnLogout.Content" xml:space="preserve">
+    <value>Деавторизація</value>
+  </data>
+  <data name="SettingsBtnLogoutInfo.Text" xml:space="preserve">
+    <value>*При виході з аккаунту всі локальні дані буде видалено!!!</value>
+  </data>
+  <data name="CmdAdd.Label" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="CmdCancel.Label" xml:space="preserve">
+    <value>Відміна</value>
+  </data>
+  <data name="CmdDelete.Label" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="CmdFilter.Label" xml:space="preserve">
+    <value>Фільтр</value>
+  </data>
+  <data name="CmdSave.Label" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="CmdUpdate.Label" xml:space="preserve">
+    <value>Оновити</value>
+  </data>
+  <data name="ConnectionError.Text" xml:space="preserve">
+    <value>Помилка з'єднання!!!</value>
+  </data>
+  <data name="ConnErr.Text" xml:space="preserve">
+    <value>Помилка з'єднання! Перевірте інтернет-з'єднання...</value>
+  </data>
+  <data name="DateToday" xml:space="preserve">
+    <value>Сьогодні</value>
+  </data>
+  <data name="DateTomorrow" xml:space="preserve">
+    <value>Завтра</value>
+  </data>
+  <data name="DateYesterday" xml:space="preserve">
+    <value>Вчора</value>
+  </data>
+  <data name="linkRegister.Content" xml:space="preserve">
+    <value>Реєстрація</value>
+  </data>
+  <data name="LogErr.Text" xml:space="preserve">
+    <value>Неправильний Логін та/або Пароль</value>
+  </data>
+  <data name="MerchantPayFrom.Header" xml:space="preserve">
+    <value>Платник</value>
+  </data>
+  <data name="MerchantPayTo.Header" xml:space="preserve">
+    <value>Отримувач</value>
+  </data>
+  <data name="NeedClose.Text" xml:space="preserve">
+    <value>Для виходу, натисніть кнопку назад ще раз</value>
+  </data>
+  <data name="PageAbout" xml:space="preserve">
+    <value>Про додаток...</value>
+  </data>
+  <data name="PageAccounts" xml:space="preserve">
+    <value>Рахунки</value>
+  </data>
+  <data name="PageBudget" xml:space="preserve">
+    <value>Бюджет</value>
+  </data>
+  <data name="PageMerchants" xml:space="preserve">
+    <value>Платники і одержувачі</value>
+  </data>
+  <data name="PageReports" xml:space="preserve">
+    <value>Звіти</value>
+  </data>
+  <data name="PageSettings" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="PageTags" xml:space="preserve">
+    <value>Категорії</value>
+  </data>
+  <data name="PageTransactions" xml:space="preserve">
+    <value>Історія</value>
+  </data>
+  <data name="PINEnter" xml:space="preserve">
+    <value>Введіть PIN-код</value>
+  </data>
+  <data name="PINRepeat" xml:space="preserve">
+    <value>Повторіть PIN-код</value>
+  </data>
+  <data name="PINSetup" xml:space="preserve">
+    <value>Задайте PIN-код</value>
+  </data>
+  <data name="PivotGiveDebt.Header" xml:space="preserve">
+    <value>Даю в борг</value>
+  </data>
+  <data name="PivotIncome.Header" xml:space="preserve">
+    <value>Дохід</value>
+  </data>
+  <data name="PivotOutcome.Header" xml:space="preserve">
+    <value>Витрата</value>
+  </data>
+  <data name="PivotTakeDebt.Header" xml:space="preserve">
+    <value>Беру в борг</value>
+  </data>
+  <data name="PivotTransfer.Header" xml:space="preserve">
+    <value>Переказ</value>
+  </data>
+  <data name="Sync.Text" xml:space="preserve">
+    <value>Синхронізація...</value>
+  </data>
+  <data name="SyncTime" xml:space="preserve">
+    <value>Остання синхронізація:</value>
+  </data>
+  <data name="SyncTimeNever" xml:space="preserve">
+    <value>Остання синхронізація: ніколи</value>
+  </data>
+  <data name="togPIN.Header" xml:space="preserve">
+    <value>Використовувати PIN-код</value>
+  </data>
+  <data name="TransComment.Header" xml:space="preserve">
+    <value>Коментар</value>
+  </data>
+  <data name="txtAuth.Text" xml:space="preserve">
+    <value>Авторизація</value>
+  </data>
+  <data name="txtLogin.Text" xml:space="preserve">
+    <value>Логін</value>
+  </data>
+  <data name="txtPassword.Text" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="accDebt" xml:space="preserve">
+    <value>Борги</value>
+  </data>
+  <data name="MerchantSearchDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="MerchantSearchDialog.SecondaryButtonText" xml:space="preserve">
+    <value>Відміна</value>
+  </data>
+  <data name="MerchantSearchDialog.Title" xml:space="preserve">
+    <value>Пошук мерчанта</value>
+  </data>
+  <data name="TransTagEmpty" xml:space="preserve">
+    <value>Без категорії</value>
+  </data>
+  <data name="TransTagGive" xml:space="preserve">
+    <value>Дав в борг</value>
+  </data>
+  <data name="TransTagTake" xml:space="preserve">
+    <value>Взяв в борг</value>
+  </data>
+  <data name="TransTagTransfer" xml:space="preserve">
+    <value>Переказ</value>
+  </data>
+  <data name="ErrorMerchantEmptyName" xml:space="preserve">
+    <value>Введіть ім'я нового платника</value>
+  </data>
+  <data name="ErrorMerchantExists" xml:space="preserve">
+    <value>Платник з таким ім'ям вже існує</value>
+  </data>
+  <data name="ParentTagText.Header" xml:space="preserve">
+    <value>Батьківська категорія</value>
+  </data>
+  <data name="ShowIncome.OnContent" xml:space="preserve">
+    <value>В доході</value>
+  </data>
+  <data name="ShowOutcome.OnContent" xml:space="preserve">
+    <value>В витратах</value>
+  </data>
+  <data name="TitleText.Header" xml:space="preserve">
+    <value>Назва</value>
+  </data>
+  <data name="InBudgetIncome.OnContent" xml:space="preserve">
+    <value>Показувати в бюджеті доходу</value>
+  </data>
+  <data name="InBudgetOutcome.OnContent" xml:space="preserve">
+    <value>Показувати в бюджеті витрати</value>
+  </data>
+  <data name="AccountFrom.Header" xml:space="preserve">
+    <value>З рахунку</value>
+  </data>
+  <data name="AccountTo.Header" xml:space="preserve">
+    <value>На рахунок</value>
+  </data>
+  <data name="TransactionIncomeAmount.Header" xml:space="preserve">
+    <value>Сумма зарахування</value>
+  </data>
+  <data name="TransactionOutcomeAmount.Header" xml:space="preserve">
+    <value>Сумма витрат</value>
+  </data>
+  <data name="TransDate.Header" xml:space="preserve">
+    <value>Дата операції</value>
+  </data>
+  <data name="AccountEditArchive.OnContent" xml:space="preserve">
+    <value>Архівний рахунок</value>
+  </data>
+  <data name="AccountEditCompany.Header" xml:space="preserve">
+    <value>Назва банку</value>
+  </data>
+  <data name="AccountEditCreditLimit.Header" xml:space="preserve">
+    <value>Кредитний ліміт</value>
+  </data>
+  <data name="AccountEditEnableCorrection.OnContent" xml:space="preserve">
+    <value>Корегувати баланс при розпізнаванні SMS</value>
+  </data>
+  <data name="AccountEditEnableSMS.OnContent" xml:space="preserve">
+    <value>Розпізнавати SMS</value>
+  </data>
+  <data name="AccountEditInBalance.OnContent" xml:space="preserve">
+    <value>Додати в загальний баланс</value>
+  </data>
+  <data name="AccountEditInstrument.Header" xml:space="preserve">
+    <value>Валюта рахунку</value>
+  </data>
+  <data name="AccountEditType.Header" xml:space="preserve">
+    <value>Тип рахунку</value>
+  </data>
+  <data name="AccountTypeCash" xml:space="preserve">
+    <value>Готівка</value>
+  </data>
+  <data name="AccountTypeCcard" xml:space="preserve">
+    <value>Кредитна карта</value>
+  </data>
+  <data name="AccountTypeChecking" xml:space="preserve">
+    <value>Банківський рахунок</value>
+  </data>
+  <data name="AccountTypeDebt" xml:space="preserve">
+    <value>Борги</value>
+  </data>
+  <data name="DialogNo" xml:space="preserve">
+    <value>Ні</value>
+  </data>
+  <data name="DialogYes" xml:space="preserve">
+    <value>Так</value>
+  </data>
+  <data name="DialogSetupPin" xml:space="preserve">
+    <value>Хочете встановити PIN-код для доступу до додатка? Ви можете зробити це пізніше в налаштуваннях...</value>
+  </data>
+  <data name="ContentDialogAccountAlias.PrimaryButtonText" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="ContentDialogAccountAlias.SecondaryButtonText" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="ContentDialogAccountAliasHeader.Header" xml:space="preserve">
+    <value>Номер картки</value>
+  </data>
+  <data name="ErrorAccountsEquals" xml:space="preserve">
+    <value>- Вхідний та вихідний рахунки не повинні співпадати</value>
+  </data>
+  <data name="ErrorEmptyTitle" xml:space="preserve">
+    <value>- Назва не може бути порожньою</value>
+  </data>
+  <data name="ErrorFirstSync" xml:space="preserve">
+    <value>Помилка синхронізації. Можливо відсутнє інтернет-з'єднання. Додаток буде закрито, спробуйте пізніше.</value>
+  </data>
+  <data name="ErrorIncomeAccountNull" xml:space="preserve">
+    <value>- Вхідний рахунок не вказано</value>
+  </data>
+  <data name="ErrorIncomeAccountTotal" xml:space="preserve">
+    <value>- Сума доходу повинна бути більше чим 0</value>
+  </data>
+  <data name="ErrorOutcomeAccountNull" xml:space="preserve">
+    <value>-Вихідний рахунок не вказано</value>
+  </data>
+  <data name="ErrorOutcomeAccountTotal" xml:space="preserve">
+    <value>- Сума витрати повинна бути більше чим 0</value>
+  </data>
+  <data name="ErrorPayeeNull" xml:space="preserve">
+    <value>- Платник не вказаний</value>
+  </data>
+  <data name="ErrorTransferTotals" xml:space="preserve">
+    <value>- Суми переводу повинні бути більше чим 0</value>
+  </data>
+  <data name="TransFilterDebt.Header" xml:space="preserve">
+    <value>Борг</value>
+  </data>
+  <data name="TransFilterIncome.Header" xml:space="preserve">
+    <value>Дохід</value>
+  </data>
+  <data name="TransFilterOutcome.Header" xml:space="preserve">
+    <value>Витрата</value>
+  </data>
+  <data name="TransFilterPeriodAll.Header" xml:space="preserve">
+    <value>Весь час</value>
+  </data>
+  <data name="TransFilterTransfer.Header" xml:space="preserve">
+    <value>Переказ</value>
+  </data>
+  <data name="TransFilterTypeAll.Header" xml:space="preserve">
+    <value>Всі</value>
+  </data>
+  <data name="TransPeriodPeriod.Header" xml:space="preserve">
+    <value>Період</value>
+  </data>
+  <data name="TransPeriodThisMonth.Header" xml:space="preserve">
+    <value>Цей місяць</value>
+  </data>
+  <data name="TransPeriodThisWeek.Header" xml:space="preserve">
+    <value>Цей тиждень</value>
+  </data>
+  <data name="TransPeriodToday.Header" xml:space="preserve">
+    <value>Сьогодні</value>
+  </data>
+  <data name="TransPeriodYesterday.Header" xml:space="preserve">
+    <value>Вчора</value>
+  </data>
+  <data name="ErrorValidation" xml:space="preserve">
+    <value>Помилка вводу даних:</value>
+  </data>
+  <data name="ButtonReset.Content" xml:space="preserve">
+    <value>Скидання</value>
+  </data>
+  <data name="SettingsHModeAll.Content" xml:space="preserve">
+    <value>Весь період</value>
+  </data>
+  <data name="SettingsHModeHalfYear.Content" xml:space="preserve">
+    <value>Пів року</value>
+  </data>
+  <data name="SettingsHModeMonth.Content" xml:space="preserve">
+    <value>Один місяць</value>
+  </data>
+  <data name="SettingsHModeWeek.Content" xml:space="preserve">
+    <value>Один тиждень</value>
+  </data>
+  <data name="SettingsHModeYear.Content" xml:space="preserve">
+    <value>Один рік</value>
+  </data>
+  <data name="LabelIncome.Text" xml:space="preserve">
+    <value>Дохід</value>
+  </data>
+  <data name="LabelOutcome.Text" xml:space="preserve">
+    <value>Витрата</value>
+  </data>
+  <data name="SettingsHModeLabel.Text" xml:space="preserve">
+    <value>Режим обмеження історії</value>
+  </data>
+  <data name="SettingsHModeWarning.Text" xml:space="preserve">
+    <value>*Не рекомендується змінювати цей параметр, це може істотно уповільнити роботу додатка</value>
+  </data>
+  <data name="FilterResultLbl.Text" xml:space="preserve">
+    <value>Результат фільтру</value>
+  </data>
+  <data name="LblCardAlias.Text" xml:space="preserve">
+    <value>Номер картки</value>
+  </data>
+  <data name="LblCardAliasDescription.Text" xml:space="preserve">
+    <value>Останні чотири цифри номера карти або аліас для розпізнавання SMS</value>
+  </data>
+  <data name="LblTransTags.Text" xml:space="preserve">
+    <value>Категорія</value>
+  </data>
+  <data name="WrongPin.Text" xml:space="preserve">
+    <value>Невірний PIN-код</value>
+  </data>
+  <data name="TransFilterAccountLbl.Text" xml:space="preserve">
+    <value>Рахунок</value>
+  </data>
+  <data name="TransFilterCategoryExclude.Header" xml:space="preserve">
+    <value>Виключити</value>
+  </data>
+  <data name="TransFilterCategoryInclude.Header" xml:space="preserve">
+    <value>Включити</value>
+  </data>
+  <data name="TransFilterCategoryLbl.Text" xml:space="preserve">
+    <value>Категорія</value>
+  </data>
+  <data name="TransFilterMerchantLbl.Text" xml:space="preserve">
+    <value>Платник</value>
+  </data>
+  <data name="TransFilterPeriodLbl.Text" xml:space="preserve">
+    <value>Період часу</value>
+  </data>
+  <data name="TransFilterTransTypeLbl.Text" xml:space="preserve">
+    <value>Тип операції</value>
+  </data>
+  <data name="AcountsShowAll.Header" xml:space="preserve">
+    <value>Всі рахунки</value>
+  </data>
+  <data name="AcountsShowSelected.Header" xml:space="preserve">
+    <value>Обрані рахунки</value>
+  </data>
+  <data name="QuickAddLbl.Text" xml:space="preserve">
+    <value>Використовувати другу плитку для швидкого додавання транзакцій</value>
+  </data>
+  <data name="QuickAddNeedPin.OnContent" xml:space="preserve">
+    <value>Використовувати PIN-код</value>
+  </data>
+  <data name="QuickAddPin" xml:space="preserve">
+    <value>Закріпити плитку</value>
+  </data>
+  <data name="QuickAddUnPin" xml:space="preserve">
+    <value>Відкріпити плитку</value>
+  </data>
+  <data name="TransFilterCommentLbl.Text" xml:space="preserve">
+    <value>Коментар</value>
+  </data>
+  <data name="AccountSummaryAllAccLbl.Text" xml:space="preserve">
+    <value>На всіх рахунках</value>
+  </data>
+  <data name="AccountSummaryAvailableLbl.Text" xml:space="preserve">
+    <value>Доступно</value>
+  </data>
+  <data name="AccountSummaryBalanceLbl.Text" xml:space="preserve">
+    <value>Баланс</value>
+  </data>
+  <data name="AccountSummaryNegativeLbl.Text" xml:space="preserve">
+    <value>Негативний</value>
+  </data>
+  <data name="AccountSummarySelectedAccDescLbl.Text" xml:space="preserve">
+    <value>*рахунки додані в загальний баланс</value>
+  </data>
+  <data name="AccountSummarySelectedAccLbl.Text" xml:space="preserve">
+    <value>На обраних рахунках</value>
+  </data>
+  <data name="AppLngDescriptionLbl.Text" xml:space="preserve">
+    <value>**Назви категорій та рахунків необхідно переводити самостійно</value>
+  </data>
+  <data name="AppLngLbl.Text" xml:space="preserve">
+    <value>Мова додатку</value>
+  </data>
+  <data name="AppLngRestartLbl.Text" xml:space="preserve">
+    <value>*Необхідний перезапуск додатку</value>
+  </data>
+  <data name="DlgMsgDeleteAccount" xml:space="preserve">
+    <value>Ви дійсно хочете видалити рахунок? Також будуть видалені всі пов'язані з ним транзакції</value>
+  </data>
+  <data name="DlgMsgDeleteMerchant" xml:space="preserve">
+    <value>Ви дійсно хочете видалити платника?</value>
+  </data>
+  <data name="DlgMsgDeleteTag" xml:space="preserve">
+    <value>Ви дійсно хочете видалити категорію?</value>
+  </data>
+  <data name="DlgMsgDeleteTransaction" xml:space="preserve">
+    <value>Ви дійсно хочете видалити транзакцію?</value>
+  </data>
+  <data name="SettingsUserCurrencyLbl.Text" xml:space="preserve">
+    <value>Валюта користувача</value>
+  </data>
+  <data name="SettingsFamilyAccessDescrLbl.Text" xml:space="preserve">
+    <value>*Використовуйте веб-сайт zenmoney.ru або додатки Android\iOS для створення\видалення користувачів</value>
+  </data>
+  <data name="SettingsFamilyAccessUsers.Text" xml:space="preserve">
+    <value>Користувачі сімейного доступу</value>
+  </data>
+  <data name="AccountsAlien" xml:space="preserve">
+    <value>Не мої рахунки</value>
+  </data>
+  <data name="AccountTypeDeposit" xml:space="preserve">
+    <value>Депозит</value>
+  </data>
+  <data name="AccountTypeLoan" xml:space="preserve">
+    <value>Кредит</value>
+  </data>
+  <data name="AccountEditPrivate.OnContent" xml:space="preserve">
+    <value>Особистий рахунок</value>
+  </data>
+  <data name="AccountEditPrivateDescr.Text" xml:space="preserve">
+    <value>*Транзакції по особистим рахунка бачить тільки їх власник</value>
+  </data>
+  <data name="AccountSummaryDeptIOweLbl.Text" xml:space="preserve">
+    <value>Я винен</value>
+  </data>
+  <data name="AccountSummaryDeptLbl.Text" xml:space="preserve">
+    <value>Борги</value>
+  </data>
+  <data name="AccountSummaryDeptOwemeLbl.Text" xml:space="preserve">
+    <value>Мені винні</value>
+  </data>
+  <data name="AccountReport.Text" xml:space="preserve">
+    <value>Розподілення по валютам</value>
+  </data>
+  <data name="PageCurrencies" xml:space="preserve">
+    <value>Валюти</value>
+  </data>
+  <data name="CurrenciesAmount.Header" xml:space="preserve">
+    <value>Сума</value>
+  </data>
+  <data name="CurrenciesConverterHeader.Header" xml:space="preserve">
+    <value>Конвертер</value>
+  </data>
+  <data name="CurrenciesCurrHeader.Header" xml:space="preserve">
+    <value>Курси валют</value>
+  </data>
+  <data name="CurrenciesFromCurrency.Header" xml:space="preserve">
+    <value>З валюти</value>
+  </data>
+  <data name="CurrenciesResult.Header" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="CurrenciesToCurrency.Header" xml:space="preserve">
+    <value>В валюту</value>
+  </data>
+  <data name="CategoryReportCollapsed.Text" xml:space="preserve">
+    <value>Згорнутий</value>
+  </data>
+  <data name="CategoryReportExpanded.Text" xml:space="preserve">
+    <value>Розгорнутий</value>
+  </data>
+  <data name="CategoryReportName.Header" xml:space="preserve">
+    <value>Звіт по категоріям</value>
+  </data>
+  <data name="CategoryReportIncome.Text" xml:space="preserve">
+    <value>Дохід</value>
+  </data>
+  <data name="CategoryReportOpType.Text" xml:space="preserve">
+    <value>Тип операції</value>
+  </data>
+  <data name="CategoryReportOutcome.Text" xml:space="preserve">
+    <value>Витрата</value>
+  </data>
+  <data name="CategoryReportType.Text" xml:space="preserve">
+    <value>Тип звіту</value>
+  </data>
+  <data name="TagRequired.OnContent" xml:space="preserve">
+    <value>Обов'язкова витрата</value>
+  </data>
+  <data name="TagRequiredDesc1.Text" xml:space="preserve">
+    <value>*Параметр використовується для розподілення доходів</value>
+  </data>
+  <data name="TagRequiredDesc2.Text" xml:space="preserve">
+    <value>Обов'язкові витрати: продукти, коммунальні платежі, проїзд...</value>
+  </data>
+  <data name="TagRequiredDesc3.Text" xml:space="preserve">
+    <value>Необов'язкові витрати (витрати від яких ви можете відмовитись): ресторани, таксі, кінотеатр...</value>
+  </data>
+  <data name="AccountEditIsDebt.OnContent" xml:space="preserve">
+    <value>Ощадний рахунок</value>
+  </data>
+  <data name="AccountEditIsDebtDesc.Text" xml:space="preserve">
+    <value>*Параметр використовується для розподілу доходів (не синхронізується з сервером)</value>
+  </data>
+  <data name="CategoryReportAbove" xml:space="preserve">
+    <value>На %1 (%2%) вище среднього</value>
+  </data>
+  <data name="CategoryReportBelow" xml:space="preserve">
+    <value>%1 до среднього</value>
+  </data>
+  <data name="TransTypeIncome" xml:space="preserve">
+    <value>Дохід</value>
+  </data>
+  <data name="TransTypeOutcome" xml:space="preserve">
+    <value>Витрата</value>
+  </data>
+  <data name="CategoryReportAboveBudget" xml:space="preserve">
+    <value>На %1 (%2%) вище запланованого</value>
+  </data>
+  <data name="CategoryReportBelowBudget" xml:space="preserve">
+    <value>%1 до запланованого</value>
+  </data>
+  <data name="IncomeDistributionBalance.Text" xml:space="preserve">
+    <value>Залишок</value>
+  </data>
+  <data name="IncomeDistributionDebets.Text" xml:space="preserve">
+    <value>Заощадження</value>
+  </data>
+  <data name="IncomeDistributionInfo" xml:space="preserve">
+    <value>*Розподілення розраховуеться по формулі</value>
+  </data>
+  <data name="IncomeDistributionInfo1" xml:space="preserve">
+    <value>- обов'язкові витрати</value>
+  </data>
+  <data name="IncomeDistributionInfo2" xml:space="preserve">
+    <value>- заощадження</value>
+  </data>
+  <data name="IncomeDistributionInfo3" xml:space="preserve">
+    <value>- необов'язкові витрати</value>
+  </data>
+  <data name="IncomeDistributionMandatory.Text" xml:space="preserve">
+    <value>Обов'язкові витрати</value>
+  </data>
+  <data name="IncomeDistributionNonMandatory.Text" xml:space="preserve">
+    <value>Необов'язкові витрати</value>
+  </data>
+  <data name="IncomeDistributionReportFromBudget" xml:space="preserve">
+    <value>(бюджет)</value>
+  </data>
+  <data name="IncomeDistributionReportMsgOops" xml:space="preserve">
+    <value>Упс, погані у вас справи. На поточний місяць доходів не заплановано. Ви тримайтеся там, щастя, здоров'я ...</value>
+  </data>
+  <data name="IncomeDistributionReportName.Header" xml:space="preserve">
+    <value>Розподілення доходів</value>
+  </data>
+  <data name="IncomeDistributionReportStr" xml:space="preserve">
+    <value>Розподілення доходів: </value>
+  </data>
+  <data name="IncomeDistributionReportMsgBad" xml:space="preserve">
+    <value>У цьому місяці вам не вдалося правильно розподілити витрати.</value>
+  </data>
+  <data name="IncomeDistributionReportMsgBadBalance" xml:space="preserve">
+    <value>У цьому місяці ви витратили більше ніж заробили.</value>
+  </data>
+  <data name="IncomeDistributionReportMsgDepositLess" xml:space="preserve">
+    <value>У цьому місяці необхідно інвестувати ще </value>
+  </data>
+  <data name="IncomeDistributionReportMsgDepositMore" xml:space="preserve">
+    <value>У цьому місяці ви інвестували більше на </value>
+  </data>
+  <data name="IncomeDistributionReportMsgMandatoryLess" xml:space="preserve">
+    <value>На обов'язкові витрати ви можете витратити ще </value>
+  </data>
+  <data name="IncomeDistributionReportMsgMandatoryMore" xml:space="preserve">
+    <value>У цьому місяці, на обов'язкові витрати, витрачено більше на </value>
+  </data>
+  <data name="IncomeDistributionReportMsgNonMandatoryLess" xml:space="preserve">
+    <value>На необов'язкові витрати ви можете витратити ще </value>
+  </data>
+  <data name="IncomeDistributionReportMsgNonMandatoryMore" xml:space="preserve">
+    <value>У цьому місяці, на необов'язкові витрати, витрачено більше на </value>
+  </data>
+  <data name="IncomeDistributionReportMsgNoAccDebets" xml:space="preserve">
+    <value>У вас немає ощадних рахунків. Створіть рахунок з типом "Депозит" або вкажіть один зі своїх рахунків як "Ощадний".</value>
+  </data>
+  <data name="IncomeDistributionReportMsgNoTagsMandatory" xml:space="preserve">
+    <value>У вас немає категорій обов'язкових витрат. Ви можете налаштувати їх в розділі "Категорії".</value>
+  </data>
+  <data name="curAED" xml:space="preserve">
+    <value>Дірхам ОАЕ</value>
+  </data>
+  <data name="curAMD" xml:space="preserve">
+    <value>Вірменський драм</value>
+  </data>
+  <data name="curARS" xml:space="preserve">
+    <value>Аргентинський песо</value>
+  </data>
+  <data name="curAUD" xml:space="preserve">
+    <value>Австралійський долар</value>
+  </data>
+  <data name="curAZN" xml:space="preserve">
+    <value>Азербайджанський манат</value>
+  </data>
+  <data name="curBAM" xml:space="preserve">
+    <value>Конвертована марка</value>
+  </data>
+  <data name="curBGN" xml:space="preserve">
+    <value>Болгарський лев</value>
+  </data>
+  <data name="curBRL" xml:space="preserve">
+    <value>Бразильський реал</value>
+  </data>
+  <data name="curBTC" xml:space="preserve">
+    <value>Біткоін</value>
+  </data>
+  <data name="curBYN" xml:space="preserve">
+    <value>Білоруський рубль (після 2016 р.)</value>
+  </data>
+  <data name="curBYR" xml:space="preserve">
+    <value>Білоруський рубль (до 2016 р.)</value>
+  </data>
+  <data name="curCAD" xml:space="preserve">
+    <value>Канадський долар</value>
+  </data>
+  <data name="curCHF" xml:space="preserve">
+    <value>Швейцарський франк</value>
+  </data>
+  <data name="curCLP" xml:space="preserve">
+    <value>Чилійський песо</value>
+  </data>
+  <data name="curCNY" xml:space="preserve">
+    <value>Китайський юань</value>
+  </data>
+  <data name="curCOP" xml:space="preserve">
+    <value>Колумбійський песо</value>
+  </data>
+  <data name="curCZK" xml:space="preserve">
+    <value>Чеська крона</value>
+  </data>
+  <data name="curDKK" xml:space="preserve">
+    <value>Датська крона</value>
+  </data>
+  <data name="curDOP" xml:space="preserve">
+    <value>Домініканський песо</value>
+  </data>
+  <data name="curEGP" xml:space="preserve">
+    <value>Єгипетський фунт</value>
+  </data>
+  <data name="curEUR" xml:space="preserve">
+    <value>Євро</value>
+  </data>
+  <data name="curGBP" xml:space="preserve">
+    <value>Фунт стерлінгів</value>
+  </data>
+  <data name="curGEL" xml:space="preserve">
+    <value>Грузинський ларі</value>
+  </data>
+  <data name="curGTQ" xml:space="preserve">
+    <value>Гватемальський Кетсаль</value>
+  </data>
+  <data name="curHKD" xml:space="preserve">
+    <value>Гонконгський долар</value>
+  </data>
+  <data name="curHRK" xml:space="preserve">
+    <value>Хорватська куна</value>
+  </data>
+  <data name="curHUF" xml:space="preserve">
+    <value>Угорський форинт</value>
+  </data>
+  <data name="curIDR" xml:space="preserve">
+    <value>Індонезійська рупія</value>
+  </data>
+  <data name="curILS" xml:space="preserve">
+    <value>Ізраїльський новий шекель</value>
+  </data>
+  <data name="curINR" xml:space="preserve">
+    <value>Індійська рупія</value>
+  </data>
+  <data name="curIRR" xml:space="preserve">
+    <value>Іранський ріал</value>
+  </data>
+  <data name="curISK" xml:space="preserve">
+    <value>Ісландська крона</value>
+  </data>
+  <data name="curJOD" xml:space="preserve">
+    <value>Йорданський динар</value>
+  </data>
+  <data name="curJPY" xml:space="preserve">
+    <value>Японська ієна</value>
+  </data>
+  <data name="curKGS" xml:space="preserve">
+    <value>Киргизький сом</value>
+  </data>
+  <data name="curKHL" xml:space="preserve">
+    <value>Камбоджійський Рієль</value>
+  </data>
+  <data name="curKRW" xml:space="preserve">
+    <value>Вон республіки Корея</value>
+  </data>
+  <data name="curKWD" xml:space="preserve">
+    <value>Кувейтський динар</value>
+  </data>
+  <data name="curKZT" xml:space="preserve">
+    <value>Казахстанський тенге</value>
+  </data>
+  <data name="curLAK" xml:space="preserve">
+    <value>Лаоський кип</value>
+  </data>
+  <data name="curLKR" xml:space="preserve">
+    <value>Шрі Ланкійська рупія</value>
+  </data>
+  <data name="curLTL" xml:space="preserve">
+    <value>Литовський літ</value>
+  </data>
+  <data name="curLVL" xml:space="preserve">
+    <value>Латвійський лат</value>
+  </data>
+  <data name="curMDL" xml:space="preserve">
+    <value>Молдовський лей</value>
+  </data>
+  <data name="curMKD" xml:space="preserve">
+    <value>Македонський динар</value>
+  </data>
+  <data name="curMNT" xml:space="preserve">
+    <value>Монгольський тугрик</value>
+  </data>
+  <data name="curMXN" xml:space="preserve">
+    <value>Мексиканське песо</value>
+  </data>
+  <data name="curMYR" xml:space="preserve">
+    <value>Малайзійський рінггіт</value>
+  </data>
+  <data name="curNIO" xml:space="preserve">
+    <value>Никарагуанская кордоба</value>
+  </data>
+  <data name="curNOK" xml:space="preserve">
+    <value>Норвезька крона</value>
+  </data>
+  <data name="curNZD" xml:space="preserve">
+    <value>Новозеландський долар</value>
+  </data>
+  <data name="curPHP" xml:space="preserve">
+    <value>Філіппінське песо</value>
+  </data>
+  <data name="curPLN" xml:space="preserve">
+    <value>Польський злотий</value>
+  </data>
+  <data name="curPRB" xml:space="preserve">
+    <value>Придністровський рубль</value>
+  </data>
+  <data name="curRON" xml:space="preserve">
+    <value>Новий Румунський лей</value>
+  </data>
+  <data name="curRSD" xml:space="preserve">
+    <value>Сербський динар</value>
+  </data>
+  <data name="curRUB" xml:space="preserve">
+    <value>Російський рубль</value>
+  </data>
+  <data name="curSEK" xml:space="preserve">
+    <value>Шведська крона</value>
+  </data>
+  <data name="curSGD" xml:space="preserve">
+    <value>Сінгапурський долар</value>
+  </data>
+  <data name="curTHB" xml:space="preserve">
+    <value>Тайський бат</value>
+  </data>
+  <data name="curTJS" xml:space="preserve">
+    <value>Таджицький сомоні</value>
+  </data>
+  <data name="curTMT" xml:space="preserve">
+    <value>Новий туркменський манат</value>
+  </data>
+  <data name="curTRY" xml:space="preserve">
+    <value>Турецька ліра</value>
+  </data>
+  <data name="curTWD" xml:space="preserve">
+    <value>Новий тайванський долар</value>
+  </data>
+  <data name="curUAH" xml:space="preserve">
+    <value>Українська гривня</value>
+  </data>
+  <data name="curUSD" xml:space="preserve">
+    <value>Долар США</value>
+  </data>
+  <data name="curUZS" xml:space="preserve">
+    <value>Узбецький сум</value>
+  </data>
+  <data name="curVND" xml:space="preserve">
+    <value>В'єтнамський донг</value>
+  </data>
+  <data name="curZAR" xml:space="preserve">
+    <value>Південноафриканський ранд</value>
+  </data>
+  <data name="RIDSetErrorMSG" xml:space="preserve">
+    <value>- Перший день фінансового місяця повинен бути в діапазоні 1 - 31</value>
+  </data>
+  <data name="RIDSetErrorMSG0" xml:space="preserve">
+    <value>- Обов'язкові та необов'язкові витрати не можуть бути 0%</value>
+  </data>
+  <data name="RIDSetErrorMSG100" xml:space="preserve">
+    <value>- Сума витрат повинна дорівнювати 100%</value>
+  </data>
+  <data name="RIDSetFinDebet.Header" xml:space="preserve">
+    <value>Заощадження</value>
+  </data>
+  <data name="RIDSetFinMand.Header" xml:space="preserve">
+    <value>Обов'язкові витрати</value>
+  </data>
+  <data name="RIDSetFinMonth.Header" xml:space="preserve">
+    <value>Перший день фінансового місяця</value>
+  </data>
+  <data name="RIDSetFinNonMand.Header" xml:space="preserve">
+    <value>Необов'язкові витрати</value>
+  </data>
+  <data name="cmdPlanned.Label" xml:space="preserve">
+    <value>Заплановані платежі</value>
+  </data>
+  <data name="PlannedContextChange.Text" xml:space="preserve">
+    <value>Внести з корегуванням</value>
+  </data>
+  <data name="PlannedContextDelete.Text" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="PlannedContextWrite.Text" xml:space="preserve">
+    <value>Внести сьогодні</value>
+  </data>
+  <data name="PlannedOpEmpty.Text" xml:space="preserve">
+    <value>Запланованих платежів нема</value>
+  </data>
+  <data name="cmdPeriodic.Label" xml:space="preserve">
+    <value>Періодичні операції</value>
+  </data>
+  <data name="PlannedContextShow.Text" xml:space="preserve">
+    <value>Показати операції</value>
+  </data>
+  <data name="PeriodicOpEmpty.Text" xml:space="preserve">
+    <value>Періодичних операцій нема</value>
+  </data>
+  <data name="StateDeleted" xml:space="preserve">
+    <value>Видалена</value>
+  </data>
+  <data name="StatePlanned" xml:space="preserve">
+    <value>Запланована</value>
+  </data>
+  <data name="StateProcessed" xml:space="preserve">
+    <value>Проведена</value>
+  </data>
+  <data name="PeriodDay" xml:space="preserve">
+    <value>день</value>
+  </data>
+  <data name="PeriodMonth" xml:space="preserve">
+    <value>місяць</value>
+  </data>
+  <data name="PeriodStr" xml:space="preserve">
+    <value>Кожен {0} {1}</value>
+  </data>
+  <data name="PeriodStrW" xml:space="preserve">
+    <value>Кожен {0} {1}</value>
+  </data>
+  <data name="PeriodWeek" xml:space="preserve">
+    <value>тиждень</value>
+  </data>
+  <data name="PeriodYear" xml:space="preserve">
+    <value>рік</value>
+  </data>
+  <data name="RateUsNo" xml:space="preserve">
+    <value>Може пізніше</value>
+  </data>
+  <data name="RateUsText" xml:space="preserve">
+    <value>Подобається додаток? Залиш відгук в магазині</value>
+  </data>
+  <data name="RateUsYes" xml:space="preserve">
+    <value>Ок</value>
+  </data>
+  <data name="PeriodicSatusDone" xml:space="preserve">
+    <value>Завершено</value>
+  </data>
+  <data name="PeriodicStatusActive" xml:space="preserve">
+    <value>Активно</value>
+  </data>
+  <data name="IncomeDistributionReportMsgNoBudget" xml:space="preserve">
+    <value>Заповніть бюджет доходу щоб отримати більш точні дані</value>
+  </data>
+  <data name="PeriodOnce" xml:space="preserve">
+    <value>Одноразово</value>
+  </data>
+  <data name="PlannedForToday" xml:space="preserve">
+    <value>Заплановано на сьогодні</value>
+  </data>
+  <data name="ScheduledFilterAll.Text" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="ScheduledFilterCaption.Text" xml:space="preserve">
+    <value>Режим відображення</value>
+  </data>
+  <data name="ScheduledFilterDeleted.Text" xml:space="preserve">
+    <value>Видалені</value>
+  </data>
+  <data name="ScheduledFilterPlanned.Text" xml:space="preserve">
+    <value>Заплановані</value>
+  </data>
+  <data name="ScheduledFilterProcessed.Text" xml:space="preserve">
+    <value>Проведені</value>
+  </data>
+  <data name="PlannedContextDeleteChain.Text" xml:space="preserve">
+    <value>Видалти ланцюжок</value>
+  </data>
+  <data name="PlannedContextShowChain.Text" xml:space="preserve">
+    <value>Показати ланцюжок</value>
+  </data>
+  <data name="ScheduleEndDate.Header" xml:space="preserve">
+    <value>Кінцева дата</value>
+  </data>
+  <data name="ScheduleEndDateUse.OnContent" xml:space="preserve">
+    <value>Встановити кінцеву дату</value>
+  </data>
+  <data name="ScheduleModeDay.Header" xml:space="preserve">
+    <value>День</value>
+  </data>
+  <data name="ScheduleModeMonth.Header" xml:space="preserve">
+    <value>Місяць</value>
+  </data>
+  <data name="ScheduleModeWeek.Header" xml:space="preserve">
+    <value>Тиждень</value>
+  </data>
+  <data name="ScheduleModeYear.Header" xml:space="preserve">
+    <value>Рік</value>
+  </data>
+  <data name="ScheduleOn.OnContent" xml:space="preserve">
+    <value>Повторювати операцію</value>
+  </data>
+  <data name="SchedulePeriodHeader.Text" xml:space="preserve">
+    <value>Періодичність повторення</value>
+  </data>
+  <data name="ScheduleRepeatDay" xml:space="preserve">
+    <value>Повторювати кожен</value>
+  </data>
+  <data name="ScheduleRepeatWeek" xml:space="preserve">
+    <value>Повторювати кожен</value>
+  </data>
+  <data name="ScheduleSymbDay" xml:space="preserve">
+    <value>день</value>
+  </data>
+  <data name="ScheduleSymbMonth" xml:space="preserve">
+    <value>місяць</value>
+  </data>
+  <data name="ScheduleSymbWeek" xml:space="preserve">
+    <value>тиждень</value>
+  </data>
+  <data name="ScheduleSymbYear" xml:space="preserve">
+    <value>рік</value>
+  </data>
+  <data name="ScheduleWeekFri.Content" xml:space="preserve">
+    <value>Пт</value>
+  </data>
+  <data name="ScheduleWeekMon.Content" xml:space="preserve">
+    <value>Пн</value>
+  </data>
+  <data name="ScheduleWeekSat.Content" xml:space="preserve">
+    <value>Сб</value>
+  </data>
+  <data name="ScheduleWeekSun.Content" xml:space="preserve">
+    <value>Нд</value>
+  </data>
+  <data name="ScheduleWeekThu.Content" xml:space="preserve">
+    <value>Чт</value>
+  </data>
+  <data name="ScheduleWeekTue.Content" xml:space="preserve">
+    <value>Вт</value>
+  </data>
+  <data name="ScheduleWeekWed.Content" xml:space="preserve">
+    <value>Ср</value>
+  </data>
+  <data name="ScheduleDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="ScheduleDialog.SecondaryButtonText" xml:space="preserve">
+    <value>Відмінити</value>
+  </data>
+  <data name="CmdSchedule.Label" xml:space="preserve">
+    <value>Розклад</value>
+  </data>
+  <data name="ScheduledLate.Text" xml:space="preserve">
+    <value>У вас є прострочені платежі</value>
+  </data>
+  <data name="ScheduledLateHide.Content" xml:space="preserve">
+    <value>Приховати</value>
+  </data>
+  <data name="ScheduledLateShow.Content" xml:space="preserve">
+    <value>Показати</value>
+  </data>
+  <data name="SpendingsCalendarName.Header" xml:space="preserve">
+    <value>Календар витрат</value>
+  </data>
+  <data name="ReportsSpendingsLegendPlanned.Text" xml:space="preserve">
+    <value>Заплановані витрати</value>
+  </data>
+  <data name="ReportsSpendingsLegendProcessed.Text" xml:space="preserve">
+    <value>Поточні витрати</value>
+  </data>
+  <data name="ReportsSpendingsLegendPlannedAbn.Text" xml:space="preserve">
+    <value>Найбільші заплановані витрати</value>
+  </data>
+  <data name="ReportsSpendingsLegendProcessedAbn.Text" xml:space="preserve">
+    <value>Найбільші поточні витрати</value>
+  </data>
+  <data name="BudgetCategoryHeader.Text" xml:space="preserve">
+    <value>Категорія</value>
+  </data>
+  <data name="BudgetCategoryIncome.Text" xml:space="preserve">
+    <value>В доходах</value>
+  </data>
+  <data name="BudgetCategoryOutcome.Text" xml:space="preserve">
+    <value>В витратах</value>
+  </data>
+  <data name="BudgetTabCategory.Header" xml:space="preserve">
+    <value>Категорії</value>
+  </data>
+  <data name="AccountEditAmount.Header" xml:space="preserve">
+    <value>Сума</value>
+  </data>
+  <data name="AccountEditCapitalization.OnContent" xml:space="preserve">
+    <value>Капіталізація відсотків</value>
+  </data>
+  <data name="AccountEditDepositOutAccount" xml:space="preserve">
+    <value>Депозит поповнений з рахунку</value>
+  </data>
+  <data name="AccountEditDepositTerm" xml:space="preserve">
+    <value>Строк депозиту</value>
+  </data>
+  <data name="AccountEditDontCreate" xml:space="preserve">
+    <value>Не добавляти перевод</value>
+  </data>
+  <data name="AccountEditLoanInAccount" xml:space="preserve">
+    <value>Кредитні гроші перевести на рахунок</value>
+  </data>
+  <data name="AccountEditLoanTerm" xml:space="preserve">
+    <value>Строк кредиту</value>
+  </data>
+  <data name="AccountEditOpenDate.Header" xml:space="preserve">
+    <value>Дата відкриття</value>
+  </data>
+  <data name="AccountEditPaymentModeConst" xml:space="preserve">
+    <value>Ануїтетні</value>
+  </data>
+  <data name="AccountEditPaymentModeFloat" xml:space="preserve">
+    <value>Диференційовані</value>
+  </data>
+  <data name="AccountEditPaymentsEnd" xml:space="preserve">
+    <value>В кінці строку</value>
+  </data>
+  <data name="AccountEditPaymentsMonth" xml:space="preserve">
+    <value>Щомісячно</value>
+  </data>
+  <data name="AccountEditPaymentsQuarter" xml:space="preserve">
+    <value>Щоквартально</value>
+  </data>
+  <data name="AccountEditPecentMode.Header" xml:space="preserve">
+    <value>Виплати</value>
+  </data>
+  <data name="AccountEditPercentage.Header" xml:space="preserve">
+    <value>Відсоткова ставка</value>
+  </data>
+  <data name="AccountEditTermTitleMonth" xml:space="preserve">
+    <value>міс.</value>
+  </data>
+  <data name="AccountEditTermTitleYear" xml:space="preserve">
+    <value>рік.</value>
+  </data>
+  <data name="AccountValidationDepositAmount" xml:space="preserve">
+    <value>- Вкажіть суму депозиту</value>
+  </data>
+  <data name="AccountValidationDepositTerm" xml:space="preserve">
+    <value>- Вкажіть строк депозиту</value>
+  </data>
+  <data name="AccountValidationLoanAmount" xml:space="preserve">
+    <value>- Вкажіть суму кредиту</value>
+  </data>
+  <data name="AccountValidationLoanTerm" xml:space="preserve">
+    <value>- Вкажіть строк кредиту</value>
+  </data>
+  <data name="AccountEditStartBalance.Header" xml:space="preserve">
+    <value>Початковий баланс</value>
+  </data>
+</root>

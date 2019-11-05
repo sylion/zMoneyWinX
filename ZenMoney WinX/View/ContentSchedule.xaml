@@ -1,0 +1,107 @@
+﻿<ContentDialog
+    x:Class="zMoneyWinX.View.ContentSchedule"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:zMoneyWinX.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="using:zMoneyWinX.Controls"
+    xmlns:model="using:zMoneyWinX.Model"
+    mc:Ignorable="d"
+    Background="White"
+    x:Uid="ScheduleDialog"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+    
+    <ContentDialog.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/ZenPivot.xaml" />
+                <ResourceDictionary Source="/Themes/ZenTextBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentDialog.Resources>
+
+    <Grid Name="Schdule">
+        <Grid.Resources>
+            <model:stringToTransDate x:Key="stringToTransDate"/>
+            <model:CheckedWeekColor x:Key="CheckedWeekColor"/>
+            <model:CheckedBackColor x:Key="CheckedBackColor"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ToggleSwitch Grid.Row="0" x:Uid="ScheduleOn" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}" IsOn="{Binding HelperEnabled, Mode=TwoWay}"/>
+        <TextBlock Grid.Row="1" x:Uid="SchedulePeriodHeader" Foreground="Gray" FontSize="10"/>
+        <Pivot Grid.Row="2" Height="24" Margin="5" SelectedIndex="{Binding Mode, Mode=TwoWay}" IsEnabled="{Binding HelperEnabled}">
+            <PivotItem x:Uid="ScheduleModeDay"/>
+            <PivotItem x:Uid="ScheduleModeWeek"/>
+            <PivotItem x:Uid="ScheduleModeMonth"/>
+            <PivotItem x:Uid="ScheduleModeYear"/>
+        </Pivot>
+
+        <Grid Grid.Row="3" Visibility="{Binding WeekVisible}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" x:Uid="ScheduleWeekMon" FontWeight="Bold" Width="40" Height="25" FontSize="13" Margin="5" BorderThickness="0" 
+                    Foreground="{Binding Week1, Converter={StaticResource CheckedWeekColor}}" Background="Transparent"
+                    Click="Button_Click" Tag="Week1" IsEnabled="{Binding HelperEnabled}"/>
+
+            <Button Grid.Column="1" x:Uid="ScheduleWeekTue" FontWeight="Bold" Width="40" Height="25" FontSize="13" Margin="5" BorderThickness="0" 
+                    Foreground="{Binding Week2, Converter={StaticResource CheckedWeekColor}}" Background="Transparent"
+                    Click="Button_Click" Tag="Week2" IsEnabled="{Binding HelperEnabled}"/>
+
+            <Button Grid.Column="2"  x:Uid="ScheduleWeekWed" FontWeight="Bold" Width="40" Height="25" FontSize="13" Margin="5" BorderThickness="0" 
+                    Foreground="{Binding Week3, Converter={StaticResource CheckedWeekColor}}" Background="Transparent"
+                    Click="Button_Click" Tag="Week3" IsEnabled="{Binding HelperEnabled}"/>
+
+            <Button Grid.Column="3"  x:Uid="ScheduleWeekThu" FontWeight="Bold" Width="40" Height="25" FontSize="13" Margin="5" BorderThickness="0" 
+                    Foreground="{Binding Week4, Converter={StaticResource CheckedWeekColor}}" Background="Transparent"
+                    Click="Button_Click" Tag="Week4" IsEnabled="{Binding HelperEnabled}"/>
+
+            <Button Grid.Column="4"  x:Uid="ScheduleWeekFri" FontWeight="Bold" Width="40" Height="25" FontSize="13" Margin="5" BorderThickness="0" 
+                    Foreground="{Binding Week5, Converter={StaticResource CheckedWeekColor}}" Background="Transparent"
+                    Click="Button_Click" Tag="Week5" IsEnabled="{Binding HelperEnabled}"/>
+
+            <Button Grid.Column="5"  x:Uid="ScheduleWeekSat" FontWeight="Bold" Width="40" Height="25" FontSize="13" Margin="5" BorderThickness="0" 
+                    Foreground="{Binding Week6, Converter={StaticResource CheckedWeekColor}}" Background="Transparent"
+                    Click="Button_Click" Tag="Week6" IsEnabled="{Binding HelperEnabled}"/>
+
+            <Button Grid.Column="6"  x:Uid="ScheduleWeekSun" FontWeight="Bold" Width="40" Height="25" FontSize="13" Margin="5" BorderThickness="0" 
+                    Foreground="{Binding Week7, Converter={StaticResource CheckedWeekColor}}" Background="Transparent"
+                    Click="Button_Click" Tag="Week7" IsEnabled="{Binding HelperEnabled}"/>
+        </Grid>
+
+        <Controls:CurrencyTextBox Grid.Row="4" Header="{Binding ScheduleRepeat}"
+                                  TextAlignment="Right" InputScope="Digits" VerticalAlignment="Top"
+                                  Text="{Binding Step, Mode=TwoWay}"
+                                  TextChanging="TextBox_TextChanging"
+                                  Symbol="{Binding ScheduleSymb}"
+                                  IsEnabled="{Binding HelperEnabled}"
+                                  GotFocus="TextBox_GotFocus"/>
+
+        <ToggleSwitch Grid.Row="5" x:Uid="ScheduleEndDateUse" OffContent="{Binding Path=OnContent, RelativeSource={RelativeSource Self}}" IsEnabled="{Binding HelperEnabled}" IsOn="{Binding HasEndDate, Mode=TwoWay}"/>
+        <CalendarDatePicker x:Uid="ScheduleEndDate" Margin="0,5,0,0"
+                            Grid.Row="6" HorizontalAlignment="Stretch" 
+                            FirstDayOfWeek="Monday"
+                            IsEnabled="{Binding HelperEnabled}"
+                            Visibility="{Binding EndDateVisible}"
+                            DateChanged="CalendarDatePicker_DateChanged"
+                            Date="{Binding EndDate, Converter={StaticResource stringToTransDate}, Mode=TwoWay}"/>
+    </Grid>
+</ContentDialog>
